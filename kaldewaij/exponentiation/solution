@@ -1,0 +1,19 @@
+Pre   : A ≥ 0 ∧ B ≥ 0
+Q     : r = A^B ∧ x = B ∧ 0 ≤ x ∧ x ≤ B
+Inv   : r = A^B ∧ 0 ≤ x ∧ x ≤ B
+Guard : ¬(x = B)
+
+
+⟦ con A,B : int { Pre: A ≥ 0 ∧ B ≥ 0 }
+; var r : int
+; ⟦ var x : int { 0 ≤ x ∧ x ≤ B }
+  ; "init"
+  { Inv }
+  ; do x ≠ B → { x ≠ B ∧ Inv }
+      "body"
+      { Inv }
+    od
+    { A^B ∧ 0 ≤ x ∧ x ≤ B }
+  ⟧
+  { Post : r = A^B }
+⟧
