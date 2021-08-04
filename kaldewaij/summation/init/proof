@@ -1,0 +1,43 @@
+•   { N ≥ 0 } init { Inv }
+
+(1) init = ? // init = x,n:= E,F // init = x,n:= 0,0
+
+(2) E = 0
+
+(3) F = 0
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(x,n:= E,F).Inv
+
+≡   Prove ⇒
+
+    •   wp.(x,n:= E,F).Inv
+
+    (4) N ≥ 0
+
+    ≡   Assignment
+
+        E = Σ (i : 0 ≤ i < F : f.i) ∧ 0 ≤ F ∧ F ≤ N
+
+    ≡   Assumption (3)
+    
+        E = Σ (i : 0 ≤ i < 0 : f.i) ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+    ≡   ≤ reflexive; Assumption (4)
+    
+        E = Σ (i : 0 ≤ i < 0 : f.i)
+
+    ≡   Contradiction
+
+        E = Σ (i : false : f.i)
+
+    ≡   Empty sum
+
+        E = 0
+
+    ■
+
+⋯   true
+
+■

@@ -1,0 +1,20 @@
+Post  : x = Σ (i : 0 ≤ i < N : f.i)
+R     : x = Σ (i : 0 ≤ i < N : f.i) ∧ n = N ∧ 0 ≤ n ∧ n ≤ N
+Inv   : x = Σ (i : 0 ≤ i < n : f.i) ∧ 0 ≤ n ∧ n ≤ N
+Guard : n ≠ N
+
+⟦ con N : int { N ≥ 0 }
+; var x : int
+  ⟦ var n : int
+  ; x,n:= 0,0
+    { Inv }
+  ; do n ≠ N →
+      { n ≠ N ∧ Inv }
+        x:= x + f.n
+      ; n:= n+1
+      { Inv }
+    od
+    { x = Σ (i : 0 ≤ i < n : f.i) ∧ n = N ∧ 0 ≤ n ∧ n ≤ N }
+  ⟧
+  { x = Σ (i : 0 ≤ i < N : f.i) }
+⟧
