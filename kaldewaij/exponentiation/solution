@@ -1,0 +1,31 @@
+Pre   : A ≥ 0 ∧ B ≥ 0
+Q     : r = A^x ∧ x = B ∧ 0 ≤ x ∧ x ≤ B
+Inv   : r = A^x ∧ 0 ≤ x ∧ x ≤ B
+Guard : ¬(x = B)
+
+
+⟦ con A,B : int { Pre: A ≥ 0 ∧ B ≥ 0 }
+
+; var r : int
+
+; ⟦ var x : int { 0 ≤ x ∧ x ≤ B }
+  
+  ; r,x:= 1,0
+
+  { Inv }
+
+  ; do x ≠ B → { x ≠ B ∧ Inv }
+
+        r:= A*r
+      ; x:= x+1
+
+      { Inv }
+    od
+
+    { r = A^x ∧ 0 ≤ x ∧ x ≤ B ∧ x = B }
+    
+  ⟧
+
+  { Post : r = A^B }
+
+⟧

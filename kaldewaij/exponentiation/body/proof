@@ -1,0 +1,51 @@
+•   { x ≠ B ∧ Inv } body { Inv }
+
+(1) body = ? // body = r:= E; x:= x+1 // body = r:= A*r; x:= x+1
+
+(2) E = ? // E = A * r
+
+≡   Hoare triple
+
+    x ≠ B ∧ Inv ⇒ wp.(r:= E; x:= x+1).Inv
+
+≡   Prove ⇒
+
+    •   wp.(r:= E; x:= x+1).Inv
+
+    (4) x ≠ B
+
+    (5) r = A^x
+
+    (6) 0 ≤ x
+
+    (7) x ≤ B
+
+    ≡   Sequencing
+
+        wp.(r:= E).(wp.(x:= x+1).Inv))
+
+    ≡   Assignment
+
+        wp.(r:= E).(r = A^(x+1) ∧ 0 ≤ x+1 ∧ x+1 ≤ B)
+
+    ≡   Assignment
+
+        E = A^(x+1) ∧ 0 ≤ x+1 ∧ x+1 ≤ B
+
+    ≡   Assumptions (4),(6), and (7)
+
+        E = A^(x+1)
+
+    ≡   Exponents
+
+        E = A * A^x
+
+    ≡   Assumption (5)
+
+        E = A * r
+
+    ■
+
+⋯   true
+
+■
