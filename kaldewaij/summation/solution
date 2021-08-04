@@ -6,7 +6,7 @@ Guard : n ≠ N
 ⟦ con N : int { N ≥ 0 }
 ; var x : int
   ⟦ var n : int
-  ; "init"
+  ; x,n:= 0,0
     { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }
