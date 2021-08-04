@@ -10,7 +10,8 @@ Guard : n ≠ N
     { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }
-      "body"
+        x:= x + f.n
+      ; n:= n+1
       { Inv }
     od
     { x = Σ (i : 0 ≤ i < n : f.i) ∧ n = N ∧ 0 ≤ n ∧ n ≤ N }
