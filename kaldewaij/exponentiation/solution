@@ -5,17 +5,27 @@ Guard : ¬(x = B)
 
 
 ⟦ con A,B : int { Pre: A ≥ 0 ∧ B ≥ 0 }
+
 ; var r : int
+
 ; ⟦ var x : int { 0 ≤ x ∧ x ≤ B }
   
   ; r,x:= 1,0
 
   { Inv }
+
   ; do x ≠ B → { x ≠ B ∧ Inv }
-      "body"
+
+        r:= A*r
+      ; x:= x+1
+
       { Inv }
     od
-    { A^B ∧ 0 ≤ x ∧ x ≤ B }
+
+    { r = A^x ∧ 0 ≤ x ∧ x ≤ B ∧ x = B }
+    
   ⟧
+
   { Post : r = A^B }
+
 ⟧
