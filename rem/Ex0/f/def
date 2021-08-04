@@ -1,0 +1,19 @@
+•   f = (n : 0 ≤ n ≤ #A : ↓ (p : 0 ≤ p < n ∧ aas(p,n) : p))
+
+•   ↓ (p : 0 ≤ p < n+1 ∧ aas(p,n+1) : p) = f(n+1)
+
+⊩   ↓ (p : 0 ≤ p < n+1 ∧ aas(p,n+1) : p)
+
+=   Textual Substitution
+
+    (↓ (p : 0 ≤ p < n ∧ aas(p,n) : p))[n:=n+1]
+
+=   λ computation
+
+    (n :: ↓ (p : 0 ≤ p < n ∧ aas(p,n) : p)).(n+1)
+
+=   Name function
+
+    f(n+1)
+
+■

@@ -1,0 +1,55 @@
+•   { N ≥ 1 } c,n:= E,F { P0(n) }
+
+(1) E = ? // E = 1
+
+(2) F = ? // F = 1
+
+≡   Hoare triple
+
+    N ≥ 1 ⇒ wp.(c,n:= E,F).(P0(n))
+
+≡   Prove ⇒
+
+    •   wp.(c,n:= E,F).(P0(n))
+
+    (3) N ≥ 1
+
+    ≡   Assignment; Definition of P0
+
+        E = ↑(p,q : 0 ≤ p < q ≤ F ∧ AAS(p,q) : q-p)
+        ∧ 1 ≤ F ≤ N
+
+    ≡   Assumption (2)
+
+        E = ↑(p,q : 0 ≤ p < q ≤ 1 ∧ AAS(p,q) : q-p)
+        ∧ 1 ≤ 1 ≤ N
+
+    ≡   ≤ reflexive; Assumption (3)
+
+        E = ↑(p,q : 0 ≤ p < q ≤ 1 ∧ AAS(p,q) : q-p)
+
+    ≡   Arithmetic
+
+        E = ↑(p,q : 0 = p ∧ q = 1 ∧ AAS(p,q) : q-p)
+
+    ≡   Substitution
+
+        E = ↑(p,q : 0 = p ∧ q = 1 ∧ AAS(0,1) : q-p)
+
+    ≡   AAS(0,1) ≡ true
+
+        E = ↑(p,q : 0 = p ∧ q = 1 : q-p)
+
+    ≡   One-point
+
+        E = 1-0
+
+    ≡   Arithmetic
+
+        E = 1
+
+    ■
+
+⋯   true
+
+■

@@ -1,0 +1,77 @@
+•   { P0(n) ∧ n ≠ N } c:= E { P0(n+1) }
+
+(1) E = ? // E = c ↑ f(n+1)
+
+≡   Hoare triple
+
+    P0(n) ∧ n ≠ N ⇒ wp.(c:= E).(P0(n+1))
+
+≡   Prove ⇒
+
+    •   wp.(c:= E).(P0(n+1))
+
+    (2) c = ↑(p,q : 0 ≤ p < q ≤ n ∧ AAS(p,q) : q-p)
+    
+    (3) 1 ≤ n
+
+    (4) n ≤ N
+
+    (2) n ≠ N
+
+    ≡   Assignment; Definition of P0
+
+        E = ↑(p,q : 0 ≤ p < q ≤ n+1 ∧ AAS(p,q) : q-p) ∧
+        1 ≤ n+1 ∧
+        n+1 ≤ N
+
+    ≡   Assumptions (3,4,5); Identity of ∧
+
+        E = ↑(p,q : 0 ≤ p < q ≤ n+1 ∧ AAS(p,q) : q-p)
+
+    ≡   Focus on quantification
+
+        •   ↑(p,q : 0 ≤ p < q ≤ n+1 ∧ AAS(p,q) : q-p)
+
+        =   Inequalities
+
+            ↑(p,q : (0 ≤ p < q ≤ n) ∨ (0 ≤ p < q = n+1) ∧ AAS(p,q) : q-p)
+
+        =   Range split
+
+            ↑(p,q : (0 ≤ p < q ≤ n) ∧ AAS(p,q) : q-p)
+            ↑
+            ↑(p,q : (0 ≤ p < q = n+1) ∧ AAS(p,q) : q-p)
+
+        =   Assumption (2)
+
+            c ↑ ↑(p,q : (0 ≤ p < q = n+1) ∧ AAS(p,q) : q-p)
+
+        =   Focus on second quantification
+
+            •   ↑(p,q : (0 ≤ p < q = n+1) ∧ AAS(p,q) : q-p)
+
+            =   Substitution
+
+                ↑(p : (0 ≤ p < n+1) ∧ AAS(p,n+1) : n+1-p)
+
+            =   Distributivity
+
+                n+1 + ↑(p : (0 ≤ p < n+1) ∧ AAS(p,n+1) : -p)
+
+            =   Property of ↑
+
+                n+1 - ↓(p : (0 ≤ p < n+1) ∧ AAS(p,n+1) : p)
+
+            ■
+
+        ⋯   c ↑ (n+1 - ↓(p : 0 ≤ p < n+1 ∧ AAS(p,n+1) : p))
+
+        =   Definition of f
+
+            c ↑ f(n+1)
+
+        ■
+
+    ⋯   E = c ↑ f(n+1)  -- Assumption (1)
+
+    ■

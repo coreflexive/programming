@@ -1,0 +1,19 @@
+•   AAS(0,1)
+
+≡   Definition of AAS, with p,q:= 0,1
+
+    # (i : 0 < i < 1 : A(i-1) > A.i) ≤ 1
+
+≡   Contradiction
+
+    # (i : false : A(i-1) > A.i) ≤ 1
+
+≡   Empty range
+
+    0 ≤ 1
+
+≡   Arithmetic
+
+    true
+
+■

@@ -1,0 +1,3 @@
+AAS(p,q)  ≡  # (i : p < i < q : A(i-1) > A.i) ≤ 1
+
+def(AAS(p,q)) ≡ 0 ≤ p ∧ q ≤ #A

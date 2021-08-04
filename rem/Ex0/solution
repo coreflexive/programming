@@ -1,0 +1,38 @@
+P0  = ( n : 0 ≤ n ≤ #A
+          : c = ↑(p,q : 0 ≤ p < q ≤ n ∧ AAS(p,q) : q-p) ∧
+            1 ≤ n ≤ N )
+
+f = ( n : 0 ≤ n ≤ #A
+        : ↓ (p : 0 ≤ p < n ∧ aas(p,n) : p)
+    )
+
+⟦ N : int { N ≥ 1 }
+
+; A(i : 0 ≤ i < N) : array of int
+
+; ⟦ c,n : int
+
+  ; c,n:=1,1
+
+  { P0(n) }
+
+  ; do n ≠ N →
+
+    { P0(n) ∧ n ≠ N }
+
+    c = c ↑ f(n+1)
+    
+    { P0(n+1) }
+
+    ; n:= n+1 
+    
+    { P0(n) }
+
+    od
+    
+    { P0(n) ∧ n=N }
+
+  ⟧
+
+  { c = ↑(p,q : 0 ≤ p < q ≤ N ∧ AAS(p,q) : q-p) }
+⟧

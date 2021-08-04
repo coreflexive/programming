@@ -1,0 +1,2 @@
+P0(n) : c = ↑(p,q : 0 ≤ p < q ≤ n ∧ AAS(p,q) : q-p)
+      ∧ 1 ≤ n ≤ N
