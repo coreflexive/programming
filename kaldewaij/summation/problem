@@ -1,0 +1,5 @@
+⟦ con N : int { N ≥ 0 }
+; var x : int 
+; "summation"
+  { x = Σ (i : 0 ≤ i < N : f.i) }
+⟧
