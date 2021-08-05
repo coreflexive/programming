@@ -1,4 +1,4 @@
-fib.0 = 1
+fib.0 = 0
 fib.1 = 1
 fib.(n+2) = fib.(n+1) + fib.n
 
@@ -11,11 +11,12 @@ Guard : n ≠ N
 ⟦ con N : int { N ≥ 0 }
 ; var x : int
   ⟦ var n : int
-  ; x,n:= 1,0
+  ; x,n:= 0,0
     { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }
-    ; "maintain Inv"
+    ; x:= fib.(n+1)
+    ; n:= n+1
       { Inv }
     od
     { Inv ∧ n = N }

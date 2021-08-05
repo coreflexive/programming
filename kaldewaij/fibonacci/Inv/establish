@@ -2,7 +2,7 @@
 
 (1) S = ? // S = x,n:= E,F // S = x,n:= 1,0
 
-(2) E = ? // E = 1
+(2) E = ? // E = 0
 
 (3) F = ? // F = 0
 
@@ -30,7 +30,7 @@
 
     ≡   Definition of fib
 
-        E = 1 -- Assumption (2)
+        E = 0 -- Assumption (2)
 
     ■
 
