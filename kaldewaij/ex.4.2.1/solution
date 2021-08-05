@@ -12,7 +12,8 @@ Guard : n ≠ N
     { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }
-      "maintain Inv"
+      r:= r ∧ f.n ≥ 0
+    ; n:=n+1
       { Inv }
     od
     { r ≡ ∀(i : 0 ≤ i < n : f.i ≥ 0) ∧ n = N ∧ 0 ≤ n ≤ N }
