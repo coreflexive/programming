@@ -1,0 +1,21 @@
+Pre   : N ≥ 0
+Post  : r ≡ ∃(i : 0 ≤ i < N : f.i)
+Q     : r ≡ ∃(i : 0 ≤ i < n : f.i) ∧ n = N ∧ 0 ≤ n ∧ n ≤ N
+Inv   : r ≡ ∃(i : 0 ≤ i < n : f.i) ∧ 0 ≤ n ∧ n ≤ N
+Guard : n ≠ N
+
+⟦ con N : int { N ≥ 0 }
+; con f : array [0..N) of bool
+; var r : bool
+  ⟦ var n : int
+  ; "establish Inv"
+    { Inv }
+  ; do n ≠ N →
+      { Inv ∧ n ≠ N }
+      "maintain Inv"
+      { Inv }
+    od
+    { Inv ∧ n = N }
+  ⟧
+  { r ≡ ∃(i : 0 ≤ i < N : f.i) }
+⟧
