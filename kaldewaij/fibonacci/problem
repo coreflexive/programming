@@ -1,0 +1,9 @@
+fib.0 = 1
+fib.1 = 1
+fib.(n+2) = fib.(n+1) + fib.n
+
+⟦ con N : int { N ≥ 0 }
+; var x : int
+; Fibonacci
+  { x = fib.N }
+⟧
