@@ -8,7 +8,8 @@ Guard : n ≠ N
 ; con f : array [0..N) of int
 ; var r : bool
   ⟦ var n : int
-  ; "establish Inv"
+  ; r,n:= true,0
+    { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }
       "maintain Inv"

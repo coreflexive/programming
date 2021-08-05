@@ -1,0 +1,43 @@
+•   { N ≥ 0 } S { Inv }
+
+(1) S = ? // S = r,n:= E,F // S = r,n:= true,0
+
+(2) E = ? // E = true
+
+(3) F = ? // F = 0
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(r,n:= E,F).Inv
+
+≡   Prove ⇒
+
+    •   wp.(r,n:= E,F).Inv
+
+    (4) N ≥ 0
+
+    ≡   Assignment
+
+        E ≡ ∀(i : 0 ≤ i < F : f.i ≥ 0) ∧ 0 ≤ F ≤ N
+
+    ≡   Assumption (3)
+
+        E ≡ ∀(i : 0 ≤ i < 0 : f.i ≥ 0) ∧ 0 ≤ 0 ≤ N
+
+    ≡   ≤ reflexive; Assumption (4)
+
+        E ≡ ∀(i : 0 ≤ i < 0 : f.i ≥ 0)
+
+    ≡   Contradiction
+
+        E ≡ ∀(i : false : f.i ≥ 0)
+
+    ≡   Empty range
+
+        E ≡ true  -- Assumption (2)
+
+    ■
+
+⋯   true
+
+■
