@@ -14,7 +14,7 @@ Guard : n ≠ N
     { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }
-    ; "maintain"
+    ; x,y:=y,y+x
     ; n:= n+1
       { Inv }
     od
