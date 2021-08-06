@@ -4,14 +4,13 @@ fib.(n+2) = fib.(n+1) + fib.n
 
 Pre   : N ≥ 0
 Post  : x = fib.N
-Q     : x = fib.n ∧ n = N ∧ 0 ≤ n ∧ n ≤ N
 Inv   : x = fib.n ∧ y = fib.(n+1) ∧ 0 ≤ n ∧ n ≤ N
 Guard : n ≠ N
 
 ⟦ con N : int { N ≥ 0 }
 ; var x : int
   ⟦ var n,y : int
-  ; "establish"
+  ; x,y,n:= 0,1,0
     { Inv }
   ; do n ≠ N →
       { n ≠ N ∧ Inv }

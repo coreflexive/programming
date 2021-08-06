@@ -1,0 +1,41 @@
+•   { N ≥ 0 } S { Inv }
+
+(1) S = ? // S = x,y,n:= E,F,G // S = x,y,n:= 0,1,0
+
+(2) E = ? // E = 0
+
+(3) F = ? // F = 1
+
+(4) G = ? // G = 0
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(x,y,n:= E,F,G).Inv
+
+≡   Prove ⇒
+
+    •   wp.(x,y,n:= E,F,G).Inv
+
+    (5) N ≥ 0
+
+    ≡   Assignment
+
+        E = fib.G ∧ F = fib.(G+1) ∧ 0 ≤ G ∧ G ≤ N
+
+    ≡   Assumption (4)
+
+        E = fib.0 ∧ F = fib.(0+1) ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+    ≡   ≤ reflexive; Assumption (5)
+
+        E = fib.0 ∧ F = fib.(1)
+
+    ≡   Definition of fib
+
+        E = 0 ∧ F = 1   -- Assumptions (2,3)
+
+    ■
+
+⋯   true
+
+■
