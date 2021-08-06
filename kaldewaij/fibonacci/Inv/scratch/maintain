@@ -1,0 +1,39 @@
+•   { n ≠ N ∧ Inv } S { Inv }
+
+(1) S = ? // S = x:= E; n:= n+1 // S = x:= fib.(n+1); n:= n+1
+
+(2) E = ? // E = fib.(n+1)
+
+≡   Hoare triple
+
+    n ≠ N ∧ Inv ⇒ wp.(x:=E ; n:= n+1).Inv
+
+≡   Prove ⇒
+
+    •   wp.(x:=E ; n:= n+1).Inv
+
+    (3) n ≠ N
+
+    (4) x = fib.n
+    
+    (5) 0 ≤ n
+    
+    (6) n ≤ N
+
+    ≡   Sequencing
+
+        wp.(x:=E).(wp.(n:= n+1).Inv)
+
+    ≡   Assignment, twice
+
+        E = fib.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+
+    ≡   Inequalities, using assumptions (3,5,6)
+
+        E = fib.(n+1) -- Assumption (2)
+
+    ■
+
+⋯   true
+
+■

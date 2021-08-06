@@ -1,0 +1,39 @@
+•   { N ≥ 0 } S { Inv }
+
+(1) S = ? // S = x,n:= E,F // S = x,n:= 1,0
+
+(2) E = ? // E = 0
+
+(3) F = ? // F = 0
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(x,n:= E,F).Inv
+
+≡   Prove ⇒
+
+    •   wp.(x,n:= E,F).Inv
+
+    (4) N ≥ 0
+
+    ≡   Assignment
+
+        E = fib.F ∧ 0 ≤ F ∧ F ≤ N
+
+    ≡   Assumption (3)
+
+        E = fib.0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+    ≡   ≤ reflexive; Assumption (4)
+
+        E = fib.0
+
+    ≡   Definition of fib
+
+        E = 0 -- Assumption (2)
+
+    ■
+
+⋯   true
+
+■

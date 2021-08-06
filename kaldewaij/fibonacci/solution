@@ -1,0 +1,24 @@
+fib.0 = 0
+fib.1 = 1
+fib.(n+2) = fib.(n+1) + fib.n
+
+Pre   : N ≥ 0
+Post  : x = fib.N
+Inv   : x = fib.n ∧ y = fib.(n+1) ∧ 0 ≤ n ∧ n ≤ N
+Guard : n ≠ N
+
+⟦ con N : int { N ≥ 0 }
+; var x : int
+  ⟦ var n,y : int
+  ; x,y,n:= 0,1,0
+    { Inv }
+  ; do n ≠ N →
+      { n ≠ N ∧ Inv }
+    ; x,y:=y,y+x
+    ; n:= n+1
+      { Inv }
+    od
+    { Inv ∧ n = N }
+  ⟧
+  { x = fib.N }
+⟧
