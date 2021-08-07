@@ -10,14 +10,14 @@
 
 •   g.0 = 0
 
-•   g.(n+1) = a.n ≤ 0 → g.n + 1 ▯ a.n < 0 → g.n
+•   g.(n+1) = a.n ≤ 0 → g.n + 1 ▯ a.n > 0 → g.n
 
 •   y = g.(n+1)  ≡  (a.n ≤ 0 ∧ y = g.n + 1) ∨ (a.n > 0 ∧ y = g.n)
 
 •   inv = (n :: r = f.n ∧ s = g.n ∧ 0 ≤ n ∧ n ≤ N)
 
 •   inv(n+1)  = (a.n < 0 ∧ r = f.n ∧ s = g.n)
-              ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1)
+              ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1) 
               ∨ (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
 
 ■

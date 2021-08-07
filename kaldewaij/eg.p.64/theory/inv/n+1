@@ -24,7 +24,7 @@
 
     ≡   Property of f, g
 
-        r = f.n ∧ s = g.n
+        r = f.n ∧ s = g.n + 1
 
     ■
 
