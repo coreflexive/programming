@@ -1,15 +1,11 @@
-inv     : r = f.n ∧ 0 ≤ n ∧ n ≤ N
-guard   : n ≠ N
-variant : N - n
-
 ⟦ con N : int { N ≥ 0 }
 ; a : array [0..N) of int
 ; var r : int
-  ⟦ var n : int
-  ; r,n: 0,0
-    { inv }
+  ⟦ var s,n : int
+    "establish inv.0"
+    { inv.0 }
   ; do n ≠ N →
-      { inv ∧ n ≠ N }
+      { inv.n ∧ n ≠ N }
     ; "establish inv(n+1)
       { inv(n+1) }
     ; n:= n+1
