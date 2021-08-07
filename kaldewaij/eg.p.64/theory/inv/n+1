@@ -1,24 +1,55 @@
-•   inv(n+1) = (a.n ≥ 0 ∧ r = f.n + g.n ∧ 0 ≤ n+1 ∧ n+1 ≤ N)
-             ∨ (a.n < 0 ∧ r = f.n ∧ 0 ≤ n+1 ∧ n+1 ≤ N)
+•   inv(n+1)  = (a.n < 0 ∧ r = f.n ∧ s = g.n)
+              ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1)
+              ∨ (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
 
 ⊩   inv(n+1)
 
 ≡   Definition of inv
 
-    (n :: r = f.n ∧ 0 ≤ n ∧ n ≤ N).(n+1)
+    (n :: r = f.n ∧ s = g.n ∧ 0 ≤ n ∧ n ≤ N).(n+1)
 
 ≡   λ comp
 
-    r = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+    r = f.(n+1) ∧ s = g.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
 
-≡   Property of f
+≡   Case analysis
 
-    ((a.n ≥ 0 ∧ r = f.n + g.n) ∨ (a.n < 0 ∧ r = f.n)) ∧
-    0 ≤ n+1 ∧ n+1 ≤ N
+    •   a.n < 0 ∨ a.n = 0 ∨ a.n > 0 ≡ true
 
-≡   Distributivity
+    ■
 
-    (a.n ≥ 0 ∧ r = f.n + g.n ∧ 0 ≤ n+1 ∧ n+1 ≤ N) ∨
-    (a.n < 0 ∧ r = f.n ∧ 0 ≤ n+1 ∧ n+1 ≤ N)
+    •   r = f.(n+1) ∧ s = g.(n+1)
+
+    -   a.n < 0
+
+    ≡   Property of f, g
+
+        r = f.n ∧ s = g.n
+
+    ■
+
+    •   r = f.(n+1) ∧ s = g.(n+1)
+
+    -   a.n = 0
+
+    ≡   Property of f, g
+
+        r = f.n + g.n ∧ s = g.n + 1
+
+    ■
+
+    •   r = f.(n+1) ∧ s = g.(n+1)
+
+    -   a.n > 0
+
+    ≡   Property of f, g
+
+        r = f.n + g.n ∧ s = g.n
+
+    ■
+
+⋯   (a.n < 0 ∧ r = f.n ∧ s = g.n) ∨
+    (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1) ∨ 
+    (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
 
 ■
