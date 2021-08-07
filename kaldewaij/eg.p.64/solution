@@ -2,5 +2,5 @@
 ; a : array [0..N) of int
 ; var r : int
 ; S
-  { r = f.n }
+  { r = f.N }
 ⟧
