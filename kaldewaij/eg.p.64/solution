@@ -6,7 +6,7 @@ Variant : N - n
 ; a : array [0..N) of int
 ; var r : int
   ⟦ var n : int
-  ; "establish Inv"
+  ; r,n: 0,0
     { Inv }
   ; do n ≠ N →
       { Inv ∧ n ≠ N }
