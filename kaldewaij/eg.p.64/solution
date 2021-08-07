@@ -1,25 +1,6 @@
-Pre     : N ≥ 0
-Post    : r = # (i,j : 0 ≤ i < j < N : f.i ≤ 0 ∧ f.j ≥ 0)
-Inv     : r = # (i,j : 0 ≤ i < j < n : f.i ≤ 0 ∧ f.j ≥ 0) ∧
-          0 ≤ n ∧
-          n ≤ N
-Guard   : n ≠ N
-Variant : N-n
-
 ⟦ con N : int { N ≥ 0 }
-; f : array [0..N) of int
+; a : array [0..N) of int
 ; var r : int
-  ⟦ var n : int
-  ; "establish Inv"
-    { Inv }
-  ; do n ≠ N →
-    { Inv ∧ n ≠ N }
-      "maintain Inv"
-    { Inv(n+1) }
-    ; n:= n+1
-    { Inv }
-    od
-    { Inv ∧ n = N }
-  ⟧
-  { r = # (i,j : 0 ≤ i < j < N : f.i ≤ 0 ∧ f.j ≥ 0) }
+; S
+  { r = f.n }
 ⟧
