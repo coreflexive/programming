@@ -6,7 +6,10 @@
     { inv.0 }
   ; do n ≠ N →
       { inv.n ∧ n ≠ N }
-    ; body
+    ; if a.n < 0 → r,s:= r,s+1
+       ▯ a.n = 0 → r,s:= r+s,s+1
+       ▯ a.n > 0 → r,s:= r+s,s
+      fi
       { inv(n+1) }
     ; n:= n+1
       { inv }

@@ -1,0 +1,139 @@
+•   { inv.n ∧ n ≠ N } body { inv(n+1) }
+
+(1) body = ? // 
+    body =  if a.n < 0 → r,s:= r,s+1
+             ▯ a.n = 0 → r,s:= r+s,s+1
+             ▯ a.n > 0 → r,s:= r+s,s
+            fi
+
+≡   Theory [9]
+
+    { inv.n ∧ n ≠ N }
+      body
+    { (a.n < 0 ∧ r = f.n ∧ s = g.n + 1)
+    ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1) 
+    ∨ (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n) }
+
+≡   Case analysis
+
+    •   a.n < 0 ∨ a.n = 0 ∨ a.n > 0
+
+    ■
+
+    •   { inv.n ∧ n ≠ N } S { a.n < 0 ∧ r = f.n ∧ s = g.n + 1 }
+
+    -   S = ? // S = r,s:= E,F // S = r,s:= r,s+1
+
+    -   E = ? // E = r
+
+    -   F = ? // F = s+1
+
+    -   a.n < 0
+
+    ≡   Hoare triple
+
+        inv.n ∧ n ≠ N ⇒ wp.(r,s:= E,F).(a.n < 0 ∧ r = f.n ∧ s = g.n + 1)
+
+    ≡   Prove ⇒
+
+        •   wp.(r,s:= E,F).(a.n < 0 ∧ r = f.n ∧ s = g.n + 1)
+
+        -   inv.n
+
+        -   n ≠ N
+
+        ≡   Assignment
+
+            a.n < 0 ∧ E = f.n ∧ F = g.n + 1
+
+        ≡   Case a.n < 0; Assumption inv.n
+
+            E = r ∧ F = s+1
+
+        ■
+
+    ⋯   true
+
+    ■
+
+    •   { inv.n ∧ n ≠ N } S { a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1 }
+
+    -   S = ? // S = r,s:= E,F // S = r,s:= r+s,s+1
+
+    -   E = ? // E = r+s
+
+    -   F = ? // F = s+1
+
+    -   a.n = 0
+
+    ≡   Hoare triple
+
+        inv.n ∧ n ≠ N ⇒ wp.(r,s:= E,F).(a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1)
+
+    ≡   Prove ⇒
+
+        •   wp.(r,s:= E,F).(a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1)
+
+        -   inv.n
+
+        -   n ≠ N
+
+        ≡   Assignment
+
+            a.n = 0 ∧ E = f.n + g.n ∧ F = g.n + 1
+
+        ≡   Case a.n = 0
+
+            E = f.n + g.n ∧ F = g.n + 1
+
+        ≡   Assumption inv.n
+
+            E = r+s ∧ F = s+1
+
+        ■
+
+    ⋯   true
+
+    ■
+
+    •   { inv.n ∧ n ≠ N } S { a.n > 0 ∧ r = f.n + g.n ∧ s = g.n }
+
+    -   S = ? // S = r,s:= E,F // S = r,s:= r+s,s
+
+    -   E = ? // E = r+s
+
+    -   F = ? // F = s
+
+    -   a.n > 0
+
+    ≡   Hoare triple
+
+        inv.n ∧ n ≠ N ⇒ wp.(r,s:= E,F).(a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
+
+    ≡   Prove ⇒
+
+        •   wp.(r,s:= E,F).(a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
+
+        -   inv.n
+
+        -   n ≠ N
+
+        ≡   Assignment
+
+            a.n > 0 ∧ E = f.n + g.n ∧ F = g.n
+
+        ≡   Case a.n > 0
+
+            E = f.n + g.n ∧ F = g.n
+
+        ≡   Assumption inv.n
+
+            E = r+s ∧ F = s
+
+        ■
+
+    ⋯   true
+
+⋯   true
+
+■
