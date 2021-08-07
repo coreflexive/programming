@@ -1,0 +1,21 @@
+•   f.0 = 0
+
+⊩   f.0
+
+=   Definition of f
+
+    (n :: #(i,j : 0 ≤ i < j < n : a.i ≤ 0 ∧ a.j ≥ 0)).0
+
+=   λ comp
+
+    #(i,j : 0 ≤ i < j < 0 : a.i ≤ 0 ∧ a.j ≥ 0)
+
+=   Contradiction
+
+    #(i,j : false : a.i ≤ 0 ∧ a.j ≥ 0)
+
+=   Empty range
+
+    0
+
+■
