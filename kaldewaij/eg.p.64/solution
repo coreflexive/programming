@@ -6,9 +6,9 @@
     { inv.0 }
   ; do n ≠ N →
       { inv.n ∧ n ≠ N }
-    ; if a.n < 0 → r,s:= r,s+1
+    ; if a.n < 0 → s:= s+1
        ▯ a.n = 0 → r,s:= r+s,s+1
-       ▯ a.n > 0 → r,s:= r+s,s
+       ▯ a.n > 0 → r:= r+s
       fi
       { inv(n+1) }
     ; n:= n+1
