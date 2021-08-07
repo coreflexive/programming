@@ -1,4 +1,4 @@
-•   inv(n+1)  = (a.n < 0 ∧ r = f.n ∧ s = g.n)
+•   inv(n+1)  = (a.n < 0 ∧ r = f.n ∧ s = g.(n+1))
               ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1)
               ∨ (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
 
@@ -48,7 +48,7 @@
 
     ■
 
-⋯   (a.n < 0 ∧ r = f.n ∧ s = g.n) ∨
+⋯   (a.n < 0 ∧ r = f.n ∧ s = g.(n+1)) ∨
     (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1) ∨ 
     (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
 
