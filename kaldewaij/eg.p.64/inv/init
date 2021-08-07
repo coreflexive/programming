@@ -1,6 +1,6 @@
-•   { N ≥ 0 } S { inv }
+•   { N ≥ 0 } init { inv.0 }
 
-(1) S = ? // S = r,n: E,F // S = r,n: 0,0
+(1) init = ? // init = r,s,n:= E,F,0 // init = r,s,n:= 0,0,0
 
 (2) E = ? // E = 0
 
@@ -8,29 +8,21 @@
 
 ≡   Hoare triple
 
-    N ≥ 0 ⇒ wp.(r,n:= E,F).inv
+    N ≥ 0 ⇒ wp.(r,s,n:= E,F,0).(inv.0)
 
 ≡   Prove ⇒
 
-    •   wp.(r,n:= E,F).inv
+    •   wp.(r,s,n:= E,F,0).(inv.0)
 
     (4) N ≥ 0
 
+    ≡   Theory [8]
+
+        wp.(r,s,n:= E,F,0).(r = 0 ∧ s = 0)
+
     ≡   Assignment
 
-        E = f.F ∧ 0 ≤ F ∧ F ≤ N
-
-    ≡   Assumption (3)
-
-        E = f.0 ∧ 0 ≤ 0 ∧ 0 ≤ N
-
-    ≡   ≤ reflexive; Assumption (4)
-
-        E = f.0
-
-    ≡   Property of f
-
-        E = 0
+        E = 0 ∧ F = 0   -- Assumptions (2,3)
 
     ■
 

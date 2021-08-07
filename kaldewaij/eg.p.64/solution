@@ -2,11 +2,11 @@
 ; a : array [0..N) of int
 ; var r : int
   ⟦ var s,n : int
-    "establish inv.0"
+  ; r,s,n:= 0,0,0
     { inv.0 }
   ; do n ≠ N →
       { inv.n ∧ n ≠ N }
-    ; "establish inv(n+1)
+    ; body
       { inv(n+1) }
     ; n:= n+1
       { inv }
