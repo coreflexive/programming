@@ -3,7 +3,7 @@
 ; var r : int
   ⟦ var n : int
   ; S
-    { r = F.n ∧ n = N ∧ 0 ≤ n ∧ n ≤ N }
+    { r = f.n ∧ n = N ∧ 0 ≤ n ∧ n ≤ N }
   ⟧
   { r = f.N }
 ⟧
