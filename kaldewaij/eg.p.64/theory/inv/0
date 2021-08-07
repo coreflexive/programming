@@ -1,4 +1,4 @@
-•   inv.0 ≡ r = 0 ∧ s = 0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+•   inv.0 ≡ r = 0 ∧ s = 0
 
 ⊩   inv.0
 
@@ -13,5 +13,9 @@
 ≡   Property of f, g
 
     r = 0 ∧ s = 0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+≡   ≤ reflexive; theory[0]
+
+    r = 0 ∧ s = 0
 
 ■
