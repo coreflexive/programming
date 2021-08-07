@@ -28,7 +28,9 @@
 
       inv = (n :: r = f.n ∧ s = g.n ∧ 0 ≤ n ∧ n ≤ N)
 
-[8]   inv(n+1)  = (a.n < 0 ∧ r = f.n ∧ s = g.n + 1)
+[8]   inv.0     ≡ r = 0 ∧ s = 0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+[9]   inv(n+1)  ≡ (a.n < 0 ∧ r = f.n ∧ s = g.n + 1)
                 ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1) 
                 ∨ (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
 
