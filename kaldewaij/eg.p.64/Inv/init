@@ -1,4 +1,4 @@
-•   { N ≥ 0 } S { Inv }
+•   { N ≥ 0 } S { inv }
 
 (1) S = ? // S = r,n: E,F // S = r,n: 0,0
 
@@ -8,11 +8,11 @@
 
 ≡   Hoare triple
 
-    N ≥ 0 ⇒ wp.(r,n:= E,F).Inv
+    N ≥ 0 ⇒ wp.(r,n:= E,F).inv
 
 ≡   Prove ⇒
 
-    •   wp.(r,n:= E,F).Inv
+    •   wp.(r,n:= E,F).inv
 
     (4) N ≥ 0
 

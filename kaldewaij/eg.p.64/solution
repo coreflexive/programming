@@ -1,19 +1,19 @@
-Inv     : r = f.n ∧ 0 ≤ n ∧ n ≤ N
-Guard   : n ≠ N
-Variant : N - n
+inv     : r = f.n ∧ 0 ≤ n ∧ n ≤ N
+guard   : n ≠ N
+variant : N - n
 
 ⟦ con N : int { N ≥ 0 }
 ; a : array [0..N) of int
 ; var r : int
   ⟦ var n : int
   ; r,n: 0,0
-    { Inv }
+    { inv }
   ; do n ≠ N →
-      { Inv ∧ n ≠ N }
-    ; "establish Inv(n+1)
-      { Inv(n+1) }
+      { inv ∧ n ≠ N }
+    ; "establish inv(n+1)
+      { inv(n+1) }
     ; n:= n+1
-      { Inv }
+      { inv }
     od
     { r = f.n ∧ n = N ∧ 0 ≤ n ∧ n ≤ N }
   ⟧

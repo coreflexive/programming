@@ -1,4 +1,4 @@
-•   { Inv ∧ n ≠ N } S { Inv(n+1) }
+•   { inv ∧ n ≠ N } S { inv(n+1) }
 
 (1) S = ? // S = r:= E 
 
@@ -6,11 +6,11 @@
 
 ≡   Hoare triple
 
-    Inv ∧ n ≠ N ⇒ wp.(r:= E).(Inv(n+1))
+    inv ∧ n ≠ N ⇒ wp.(r:= E).(inv(n+1))
 
 ≡   Prove ⇒
 
-    •   wp.(r:= E).(Inv(n+1))
+    •   wp.(r:= E).(inv(n+1))
 
     (3) r = f.n
     
