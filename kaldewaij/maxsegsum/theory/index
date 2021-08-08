@@ -1,0 +1,15 @@
+§   MAXSEGSUM
+
++   N : ℕ
+
++   a : array [0..N) of ℤ
+
++   ss : [0,N) × [0,N) → ℤ
+
+    ss = (p,q :: Σ(i : p ≤ i < q : a.i))
+
+[0] ss.(n,n) = 0
+
+[1] ss.(p,n+1) = ss.(p,n) + a.n
+
+■   MAXSEGSUM

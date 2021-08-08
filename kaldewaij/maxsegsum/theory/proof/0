@@ -1,0 +1,21 @@
+•   ss.(n,n) = 0
+
+⊩  ss.(n,n)
+
+=   Definition of ss
+
+    (p,q :: Σ(i : p ≤ i < q : a.i)).(n,n)
+
+=   λ comp
+
+    Σ(i : n ≤ i < n : a.i)
+
+=   Contradiction
+
+    Σ(i : false : a.i)
+
+=   Empty range
+
+    0
+
+■
