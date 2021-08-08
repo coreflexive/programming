@@ -1,0 +1,29 @@
+inv   : r = mss.n ∧ 0 ≤ n ∧ n ≤ N
+guard : n ≠ N
+
+⟦ con N : int { N ≥ 0 }
+; con a : array [0..N) of int
+; var r : int
+  ⟦ var n : int
+
+  ; "establish inv.n"
+
+    { inv.n }
+
+  ; do n ≠ N →
+
+      { inv.n ∧ n ≠ N }
+
+      "establish inv.(n+1)"
+
+      { inv.(n+1) }
+
+    ; n:= n+1
+
+      { inv.n }
+    od
+    
+    { inv ∧ n = N }
+  ⟧
+  { r = ↑(p,q : 0 ≤ p ≤ q ≤ N : Σ (i : p ≤ i < q : a.i)) }
+⟧
