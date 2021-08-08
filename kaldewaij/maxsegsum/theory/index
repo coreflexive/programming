@@ -4,7 +4,7 @@
 
 +   a : array [0..N) of ℤ
 
-+   ss : [0,N) × [0,N) → ℤ
++   ss : [0,N] × [0,N] → ℤ
 
     ss = (p,q :: Σ(i : p ≤ i < q : a.i))
 
@@ -17,5 +17,11 @@
     (n :: ↑(p,q : 0 ≤ p ≤ q ≤ n : ss(p,q)))
 
 [2] mss.0 = 0
+
+[3] mss.(n+1) = ?
+
++   f : [0..N] → ℤ
+
+    f = (n :: ↑(p : 0 ≤ p ≤ n : ss(p,n)))
 
 ■   MAXSEGSUM
