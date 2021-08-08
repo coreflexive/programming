@@ -1,0 +1,43 @@
+•   { N ≥ 0 } S { inv.n }
+
+(1) S = ? // S = r,n:= E,F // S = r,n:= 0,0
+
+(2) E = ? // E = 0
+
+(3) F = ? // F = 0
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(r,n:= E,F).(inv.n)
+
+≡   Prove ⇒
+
+    •   wp.(r,n:= E,F).(inv.n)
+
+    (4) N ≥ 0
+
+    ≡   Assignment
+
+        (r = mss.n ∧ 0 ≤ n ∧ n ≤ N)[r,n:=E,F]
+
+    ≡   Textual substitution
+
+        E = mss.F ∧ 0 ≤ F ∧ F ≤ N
+
+    ≡   Assumption (3)
+
+        E = mss.0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+    ≡   ≤ reflexive; Assumption (4)
+
+        E = mss.0
+
+    ≡   Property of mss (Theory[2])
+
+        E = 0   -- Assumption (2)
+
+    ■
+
+⋯   true
+
+■
