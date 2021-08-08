@@ -14,7 +14,7 @@ guard : n ≠ N
 
       { inv.n ∧ n ≠ N }
 
-      "establish inv.(n+1)"
+      r:= r ↑ ((f.n + a.n) ↑ 0)
 
       { inv.(n+1) }
 
