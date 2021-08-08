@@ -24,4 +24,6 @@
 
     f = (n :: ↑(p : 0 ≤ p ≤ n : ss(p,n)))
 
+[4] f.0 = 0
+
 ■   MAXSEGSUM

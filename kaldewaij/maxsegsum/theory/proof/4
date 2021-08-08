@@ -1,0 +1,25 @@
+•   f.0 = 0
+
+⊩   f.0
+
+=   Definition of f
+
+    (n :: ↑(p : 0 ≤ p ≤ n : ss(p,n))).0
+
+=   λ comp
+
+    ↑(p : 0 ≤ p ≤ 0 : ss(p,0))
+
+=   Inequalities
+
+    ↑(p : 0 = p : ss(p,0))
+
+=   One-point
+
+    ss(0,0)
+
+=   Property of ss (Theory[0], with n:= 0)
+
+    0
+
+■
