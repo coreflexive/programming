@@ -1,0 +1,33 @@
+•   f.(n+1) = (f.n + a.n) ↑ 0
+
+⊩   f.(n+1)
+
+=   Definition of f
+
+    (n :: ↑(p : 0 ≤ p ≤ n : ss(p,n))).(n+1)
+
+=   λ comp
+
+    ↑(p : 0 ≤ p ≤ n+1 : ss(p,n+1))
+
+=   Split-off term
+
+    ↑(p : 0 ≤ p ≤ n : ss(p,n+1)) ↑ ss(n+1,n+1)
+
+=   Property of ss (Theory[0])
+
+    ↑(p : 0 ≤ p ≤ n : ss(p,n+1)) ↑ 0
+
+=   Property of ss (Theory[1])
+
+    ↑(p : 0 ≤ p ≤ n : ss.(p,n) + a.n) ↑ 0
+
+=   Distributivity
+
+    (↑(p : 0 ≤ p ≤ n : ss.(p,n)) + a.n) ↑ 0
+
+=   Definition of f
+
+    (f.n + a.n) ↑ 0
+
+■
