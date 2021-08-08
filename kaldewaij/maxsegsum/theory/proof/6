@@ -1,0 +1,21 @@
+•   inv.0 ≡ r = 0
+
+⊩   inv.0
+
+≡   Definition of inv
+
+    (n :: r = mss.n ∧ 0 ≤ n ∧ n ≤ N).0
+
+≡   λ comp
+
+    r = mss.0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+≡   ≤ reflexive; Definition of N
+
+    r = mss.0
+
+≡   Property of mss (Theory[2])
+
+    r = 0
+
+■
