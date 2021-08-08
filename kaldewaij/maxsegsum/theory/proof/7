@@ -1,21 +1,17 @@
-•   inv.(n+1) ≡ ?
+•   inv.(n+1) ≡ r = mss(n) ↑ f.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
 
 ⊩   inv.(n+1)
 
 ≡   Definition of inv
 
-    (n :: r = mss.n ∧ 0 ≤ n ∧ n ≤ N).(n+1)
+    (n :: r = mss.n ∧ s = f.n ∧ 0 ≤ n ∧ n ≤ N).(n+1)
 
 ≡   λ comp
 
-    r = mss.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+    r = mss.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
 
-≡   Property of mss (Theory[3])
+≡   Theory[3]
 
-    r = mss(n) ↑ f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
-
-≡   Property of f (Theory[5])
-
-    r = mss(n) ↑ ((f.n + a.n) ↑ 0) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+    r = mss(n) ↑ f.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
 
 ■

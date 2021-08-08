@@ -1,35 +1,59 @@
 •   { inv.n ∧ n ≠ N } S { inv.(n+1) }
 
-(1) S = ? // S = r:= E // S = r:= r ↑ ((f.n + a.n) ↑ 0)
+(1) S = ? // r,s:= E,F // r,s:= r ↑ (s + a.n) ↑ 0,(s + a.n) ↑ 0
 
-(2) E = ? // r ↑ ((f.n + a.n) ↑ 0)
+(2) E = ? // E = r ↑ (s + a.n) ↑ 0
+
+(3) F = ? // F = (s + a.n) ↑ 0
 
 ≡   Hoare triple
 
-    inv.n ∧ n ≠ N ⇒ wp.(r:= E).(inv.(n+1))
+    inv.n ∧ n ≠ N ⇒ wp.(r,s:= E,F).(inv.(n+1))
 
 ≡   Prove ⇒
 
-    •   wp.(r:= E).(inv.(n+1))
+    •   wp.(r,s:= E,F).(inv.(n+1))
 
-    (3) r = mss.n
+    (4) r = mss.n
     
-    (4) 0 ≤ n
+    (5) s = f.n
     
-    (5) n ≤ N
+    (6) 0 ≤ n
+    
+    (7) n ≤ N
 
-    (6) n ≠ N
+    (8) n ≠ N
 
-    ≡   Property of inv (Theory[7]); Assignment
+    ≡   Assignment
 
-        E = mss(n) ↑ ((f.n + a.n) ↑ 0) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+        (inv.(n+1))[r,s:= E,F]
 
-    ≡   Inequalities, using assumptions (4..6)
+    ≡   Theory[7]
 
-        E = mss(n) ↑ ((f.n + a.n) ↑ 0)
+        (r = mss(n) ↑ f.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N)[r,s:= E,F]
 
-    ≡   Assumption (3)
+    ≡   Textual substitution
 
-        E = r ↑ ((f.n + a.n) ↑ 0)
+        E = mss(n) ↑ f.(n+1) ∧ F = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+
+    ≡   Inequalities, using assumptions (6..8)
+
+        E = mss(n) ↑ f.(n+1) ∧ F = f.(n+1)
+
+    ≡   Assumption (4)
+
+        E = r ↑ f.(n+1) ∧ F = f.(n+1)
+
+    ≡   Theory[5]
+
+        E = r ↑ (f.n + a.n) ↑ 0 ∧ F = (f.n + a.n) ↑ 0
+
+    ≡   Assumptions (2,3)
+
+        E = r ↑ (s + a.n) ↑ 0 ∧ F = (s + a.n) ↑ 0
 
     ■
+
+⋯   true
+
+■
