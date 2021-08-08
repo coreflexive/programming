@@ -1,0 +1,8 @@
+⟦ con N : int { N ≥ 0 }
+; con a : array [0..N) of int
+; var r : int
+
+; maxsegsum
+
+  { r = ↑(p,q : 0 ≤ p ≤ q ≤ N : Σ (i : p ≤ i < q : a.i)) }
+⟧
