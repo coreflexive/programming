@@ -1,0 +1,55 @@
+•   inv(n+1)  = (a.n < 0 ∧ r = f.n ∧ s = g.(n+1))
+              ∨ (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1)
+              ∨ (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
+
+⊩   inv(n+1)
+
+≡   Definition of inv
+
+    (n :: r = f.n ∧ s = g.n ∧ 0 ≤ n ∧ n ≤ N).(n+1)
+
+≡   λ comp
+
+    r = f.(n+1) ∧ s = g.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+
+≡   Case analysis
+
+    •   a.n < 0 ∨ a.n = 0 ∨ a.n > 0 ≡ true
+
+    ■
+
+    •   r = f.(n+1) ∧ s = g.(n+1)
+
+    -   a.n < 0
+
+    ≡   Property of f, g
+
+        r = f.n ∧ s = g.n + 1
+
+    ■
+
+    •   r = f.(n+1) ∧ s = g.(n+1)
+
+    -   a.n = 0
+
+    ≡   Property of f, g
+
+        r = f.n + g.n ∧ s = g.n + 1
+
+    ■
+
+    •   r = f.(n+1) ∧ s = g.(n+1)
+
+    -   a.n > 0
+
+    ≡   Property of f, g
+
+        r = f.n + g.n ∧ s = g.n
+
+    ■
+
+⋯   (a.n < 0 ∧ r = f.n ∧ s = g.(n+1)) ∨
+    (a.n = 0 ∧ r = f.n + g.n ∧ s = g.n + 1) ∨ 
+    (a.n > 0 ∧ r = f.n + g.n ∧ s = g.n)
+
+■

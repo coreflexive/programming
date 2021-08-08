@@ -1,0 +1,21 @@
+•   inv.0 ≡ r = 0 ∧ s = 0
+
+⊩   inv.0
+
+≡   Definition of inv
+
+    (n :: r = f.n ∧ s = g.n ∧ 0 ≤ n ∧ n ≤ N).0
+
+≡   λ comp
+
+    r = f.0 ∧ s = g.0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+≡   Property of f, g
+
+    r = 0 ∧ s = 0 ∧ 0 ≤ 0 ∧ 0 ≤ N
+
+≡   ≤ reflexive; theory[0]
+
+    r = 0 ∧ s = 0
+
+■

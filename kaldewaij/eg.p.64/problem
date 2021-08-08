@@ -1,0 +1,6 @@
+⟦ con N : int { N ≥ 0 }
+; a : array [0..N) of int
+; var r : int
+; S
+  { r = # (i,j : 0 ≤ i < j < N : a.i ≤ 0 ∧ a.j ≥ 0) }
+⟧

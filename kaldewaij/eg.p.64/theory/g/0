@@ -1,0 +1,21 @@
+•   g.0 = 0
+
+⊩   g.0
+
+=   Definition of g
+
+    (n :: #(i : 0 ≤ i < n : a.i ≤ 0)).0
+
+=   λ comp
+
+    #(i : 0 ≤ i < 0 : a.i ≤ 0)
+
+=   Contradiction
+
+    #(i : false : a.i ≤ 0)
+
+=   Empty range
+
+    0
+
+■
