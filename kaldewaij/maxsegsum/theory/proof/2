@@ -1,0 +1,25 @@
+•   mss.0 = 0
+
+⊩   mss.0
+
+=   Definition of mss
+
+    (n :: ↑(p,q : 0 ≤ p ≤ q ≤ n : ss(p,q))).0
+
+=   λ comp
+
+    ↑(p,q : 0 ≤ p ≤ q ≤ 0 : ss(p,q))
+
+=   Inequalities
+
+    ↑(p,q : 0 = p ∧ q = 0 : ss(p,q))
+
+=   One-point
+
+    ss(0,0)
+
+=   Property of ss (Theory[0])
+
+    0
+
+■
