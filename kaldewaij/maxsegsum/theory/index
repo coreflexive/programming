@@ -34,4 +34,6 @@
 
 [6] inv.0 ≡ r = 0
 
+[7] inv.(n+1) ≡ r = mss(n) ↑ ((f.n + a.n) ↑ 0) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+
 ■   MAXSEGSUM
