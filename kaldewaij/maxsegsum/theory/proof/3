@@ -1,0 +1,42 @@
+•   mss.(n+1) = mss(n) ↑ f.(n+1)
+
+⊩   mss.(n+1)
+
+=   Definition of mss
+
+    (n :: ↑(p,q : 0 ≤ p ≤ q ≤ n : ss(p,q))).(n+1)
+
+=   λ comp
+
+    ↑(p,q : 0 ≤ p ≤ q ≤ n+1 : ss(p,q))
+
+=   Inequalities
+
+    ↑(p,q : 0 ≤ p ≤ q ∧ (q ≤ n ∨ q = n+1) : ss(p,q))
+
+=   Range split
+
+    ↑(p,q : 0 ≤ p ≤ q ≤ n : ss(p,q)) ↑
+    ↑(p,q : 0 ≤ p ≤ q ∧ q = n+1 : ss(p,q))
+
+=   Definition of mss
+
+    mss(n) ↑ ↑(p,q : 0 ≤ p ≤ q ∧ q = n+1 : ss(p,q))
+
+=   Focus on quantification
+
+    •   ↑(p,q : 0 ≤ p ≤ q ∧ q = n+1 : ss(p,q))
+
+    =   One-point
+
+        ↑(p : 0 ≤ p ≤ n+1 : ss(p,n+1))
+
+    =   Definition of f
+
+        f.(n+1)
+
+    ■
+
+⋯   mss(n) ↑ f.(n+1)
+
+■

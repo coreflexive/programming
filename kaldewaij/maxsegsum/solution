@@ -1,0 +1,27 @@
+⟦ con N : int { N ≥ 0 }
+; con a : array [0..N) of int
+; var r : int
+  ⟦ var s,n : int
+
+  ; r,s,n:= 0,0,0
+
+    { inv.n }
+
+  ; do n ≠ N →
+
+      { inv.n ∧ n ≠ N }
+
+      s:= (s + a.n) ↑ 0
+    ; r:= r ↑ s
+    
+      { inv.(n+1) }
+
+    ; n:= n+1
+
+      { inv.n }
+    od
+
+    { inv ∧ n = N }
+  ⟧
+  { r = ↑(p,q : 0 ≤ p ≤ q ≤ N : Σ (i : p ≤ i < q : a.i)) }
+⟧

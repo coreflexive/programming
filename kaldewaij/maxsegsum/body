@@ -1,0 +1,58 @@
+•   { inv.n ∧ n ≠ N } s:= (s + a.n) ↑ 0 ; r:= r ↑ s { inv.(n+1) }
+
+≡   Hoare triple
+
+    inv.n ∧ n ≠ N ⇒ wp.(s:= (s + a.n) ↑ 0 ; r:= r ↑ s).(inv.(n+1))
+
+≡   Prove ⇒
+
+    •   wp.(s:= (s + a.n) ↑ 0 ; r:= r ↑ s).(inv.(n+1))
+
+    (1) r = mss.n
+    
+    (2) s = f.n
+    
+    (3) 0 ≤ n
+    
+    (4) n ≤ N
+
+    (5) n ≠ N
+
+    ≡   Sequencing
+
+        wp.(s:= (s + a.n) ↑ 0).(wp.(r:= r ↑ s).(inv.(n+1)))
+
+    ≡   Assignment
+
+        wp.(s:= (s + a.n) ↑ 0)
+          .(r ↑ s = mss(n) ↑ f.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N)
+
+    ≡   Assignment
+
+        r ↑ (s + a.n) ↑ 0 = mss(n) ↑ f.(n+1) ∧ (s + a.n) ↑ 0 = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+
+    ≡   Inequalities, using assumptions (3,4,5)
+
+        r ↑ (s + a.n) ↑ 0 = mss(n) ↑ f.(n+1) ∧ (s + a.n) ↑ 0 = f.(n+1)
+
+    ≡   Assumption (2)
+
+        r ↑ (f.n + a.n) ↑ 0 = mss(n) ↑ f.(n+1) ∧ (f.n + a.n) ↑ 0 = f.(n+1)
+
+    ≡   Theory[5]
+
+        r ↑ f.(n+1) = mss(n) ↑ f.(n+1) ∧ f.(n+1) = f.(n+1)
+
+    ≡   = reflexive
+
+        r ↑ f.(n+1) = mss(n) ↑ f.(n+1)
+
+    ≡   Assumption (1)
+
+        mss(n) ↑ f.(n+1) = mss(n) ↑ f.(n+1) -- reflexivity
+
+    ■
+
+⋯   true
+
+■

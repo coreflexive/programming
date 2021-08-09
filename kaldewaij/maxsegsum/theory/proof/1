@@ -1,0 +1,21 @@
+•   ss.(p,n+1) = ss.(p,n) + a.n
+
+⊩   ss.(p,n+1)
+
+=   Defintion of ss
+
+    (p,q :: Σ(i : p ≤ i < q : a.i)).(p,n+1)
+
+=   λ comp
+
+    Σ(i : p ≤ i < n+1 : a.i)
+
+=  Split-off term
+
+    Σ(i : p ≤ i < n : a.i) + a.n
+
+=   Definition of ss
+
+    ss.(p,n) + a.n
+
+■
