@@ -1,56 +1,55 @@
-•   { inv.n ∧ n ≠ N } S { inv.(n+1) }
-
-(1) S = ? // r,s:= E,F // r,s:= r ↑ (s + a.n) ↑ 0,(s + a.n) ↑ 0
-
-(2) E = ? // E = r ↑ (s + a.n) ↑ 0
-
-(3) F = ? // F = (s + a.n) ↑ 0
+•   { inv.n ∧ n ≠ N } s:= (s + a.n) ↑ 0 ; r:= r ↑ s { inv.(n+1) }
 
 ≡   Hoare triple
 
-    inv.n ∧ n ≠ N ⇒ wp.(r,s:= E,F).(inv.(n+1))
+    inv.n ∧ n ≠ N ⇒ wp.(s:= (s + a.n) ↑ 0 ; r:= r ↑ s).(inv.(n+1))
 
 ≡   Prove ⇒
 
-    •   wp.(r,s:= E,F).(inv.(n+1))
+    •   wp.(s:= (s + a.n) ↑ 0 ; r:= r ↑ s).(inv.(n+1))
 
-    (4) r = mss.n
+    (1) r = mss.n
     
-    (5) s = f.n
+    (2) s = f.n
     
-    (6) 0 ≤ n
+    (3) 0 ≤ n
     
-    (7) n ≤ N
+    (4) n ≤ N
 
-    (8) n ≠ N
+    (5) n ≠ N
+
+    ≡   Sequencing
+
+        wp.(s:= (s + a.n) ↑ 0).(wp.(r:= r ↑ s).(inv.(n+1)))
 
     ≡   Assignment
 
-        (inv.(n+1))[r,s:= E,F]
+        wp.(s:= (s + a.n) ↑ 0)
+          .(r ↑ s = mss(n) ↑ f.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N)
 
-    ≡   Theory[7]
+    ≡   Assignment
 
-        (r = mss(n) ↑ f.(n+1) ∧ s = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N)[r,s:= E,F]
+        r ↑ (s + a.n) ↑ 0 = mss(n) ↑ f.(n+1) ∧ (s + a.n) ↑ 0 = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
 
-    ≡   Textual substitution
+    ≡   Inequalities, using assumptions (3,4,5)
 
-        E = mss(n) ↑ f.(n+1) ∧ F = f.(n+1) ∧ 0 ≤ n+1 ∧ n+1 ≤ N
+        r ↑ (s + a.n) ↑ 0 = mss(n) ↑ f.(n+1) ∧ (s + a.n) ↑ 0 = f.(n+1)
 
-    ≡   Inequalities, using assumptions (6..8)
+    ≡   Assumption (2)
 
-        E = mss(n) ↑ f.(n+1) ∧ F = f.(n+1)
-
-    ≡   Assumption (4)
-
-        E = r ↑ f.(n+1) ∧ F = f.(n+1)
+        r ↑ (f.n + a.n) ↑ 0 = mss(n) ↑ f.(n+1) ∧ (f.n + a.n) ↑ 0 = f.(n+1)
 
     ≡   Theory[5]
 
-        E = r ↑ (f.n + a.n) ↑ 0 ∧ F = (f.n + a.n) ↑ 0
+        r ↑ f.(n+1) = mss(n) ↑ f.(n+1) ∧ f.(n+1) = f.(n+1)
 
-    ≡   Assumptions (2,3)
+    ≡   = reflexive
 
-        E = r ↑ (s + a.n) ↑ 0 ∧ F = (s + a.n) ↑ 0
+        r ↑ f.(n+1) = mss(n) ↑ f.(n+1)
+
+    ≡   Assumption (1)
+
+        mss(n) ↑ f.(n+1) = mss(n) ↑ f.(n+1) -- reflexivity
 
     ■
 
