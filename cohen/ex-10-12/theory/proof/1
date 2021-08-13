@@ -31,4 +31,8 @@
 
     p.n ∧ ∀( i : 0 ≤ i < n : a.i ≤ a.n )
 
+≡   Theory [2]
+
+    p.n ∧ a.n = ↑( i : 0 ≤ i ≤ n : a.i )
+
 ■
