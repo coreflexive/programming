@@ -10,4 +10,6 @@
 
     p = ( n : n ∈ [0,N] : ∀( i,j : 0 ≤ i < j < n : a.i ≤ a.j ))
 
+[0] p.0 ≡ true
+
 ■   COHEN-EX-10-12
