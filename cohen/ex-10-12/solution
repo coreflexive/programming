@@ -1,4 +1,9 @@
 ⟦ var a : array [0,N) of int
 ; var z : bool
+; z,y,n:= true,-∞,0
+; do n ≠ N → 
+    z,y:= z ∧ a.n = y ↑ a.n, y ↑ a.n
+  ; n:= n+1
+  od
 ; z ≡ p.N
 ⟧
