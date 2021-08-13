@@ -1,0 +1,29 @@
+•   { N ≥ 0 } z,y,n:= true,-∞,0 { inv.n }
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(z,y,n:= true,-∞,0).(inv.n)
+
+≡   Prove ⇒
+
+    •   wp.(z,y,n:= true,-∞,0).(inv.n)
+
+    (1) N ≥ 0
+
+    ≡   Assignment
+
+        (n ∈ [0,N] ∧ z ≡ p.n ∧ y = f.n)[z,y,n:= true,-∞,0]
+
+    ≡   Textual substitution
+
+        0 ∈ [0,N] ∧ true ≡ p.0 ∧ -∞ = f.0
+
+    ≡   Membership; Theory [0,3]
+
+        true
+
+    ■
+
+⋯   true
+
+■

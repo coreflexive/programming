@@ -1,0 +1,54 @@
+•   { inv.n ∧ n ≠ N }
+      
+      z,y:= z ∧ a.n = y ↑ a.n,y ↑ a.n  
+      
+    { inv.(n+1) }
+
+≡   Hoare triple
+
+    inv.n ∧ n ≠ N ⇒ wp.(z,y:= z ∧ a.n = y ↑ a.n,y ↑ a.n).(inv.(n+1))
+
+≡   Prove ⇒
+
+    •   wp.(z,y:= z ∧ a.n = y ↑ a.n,y ↑ a.n).(inv.(n+1))
+
+    (1) n ∈ [0,N]
+
+    (2) z ≡ p.n
+
+    (3) y = f.n
+
+    (4) n ≠ N
+
+    ≡   Assignment
+
+        ( n+1 ∈ [0,N] ∧
+          z ≡ p.(n+1) ∧
+          y = f.(n+1)
+        )[z,y:= z ∧ a.n = y ↑ a.n,y ↑ a.n]
+
+    ≡   Textual substitution
+
+        n+1 ∈ [0,N] ∧
+        z ∧ a.n = y ↑ a.n ≡ p.(n+1) ∧
+        y ↑ a.n = f.(n+1)
+
+    ≡   Membership, using assumptions (1,4)
+
+        z ∧ a.n = y ↑ a.n ≡ p.(n+1) ∧
+        y ↑ a.n = f.(n+1)
+
+    ≡   Assumptions (2,3)
+
+        p.n ∧ a.n = f.n ↑ a.n ≡ p.(n+1) ∧
+        f.n ↑ a.n = f.(n+1)
+
+    ≡   Theory [4]
+
+        p.n ∧ a.n = f.(n+1) ≡ p.(n+1) ∧   -- Theory [1]
+
+    ■
+
+⋯   true
+
+■

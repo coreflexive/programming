@@ -1,0 +1,17 @@
+•   ∀( i : 0 ≤ i < n : a.i ≤ a.n ) ≡ a.n = ↑( i : 0 ≤ i ≤ n : a.i )
+
+⊩   ∀( i : 0 ≤ i < n : a.i ≤ a.n )
+
+≡   ≤ reflexive
+
+    ∀( i : 0 ≤ i < n : a.i ≤ a.n ) ∧ a.n ≤ a.n
+
+≡   Split off term, backwards
+
+    ∀( i : 0 ≤ i ≤ n : a.i ≤ a.n )
+
+≡   ↑ charn
+
+    a.n = ↑( i : 0 ≤ i ≤ n : a.i )
+
+■

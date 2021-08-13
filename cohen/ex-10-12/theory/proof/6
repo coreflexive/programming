@@ -1,0 +1,28 @@
+•   inv.(n+1) ≡ z ≡ p.n ∧ a.n = f.n ↑ a.n ∧
+                y = f.n ↑ a.n
+
+    ⚠  n ∈ ? // n ∈ [0,N)
+
+⊩   inv.(n+1)
+
+≡   Definiton of inv
+
+    ( n : n ∈ [0,N] : z ≡ p.n ∧ y = f.n ).(n+1)
+
+≡   λ comp
+
+    ⚠  n+1 ∈ [0,N]
+
+    z ≡ p.(n+1) ∧
+    y = f.(n+1)
+
+≡   Theory [1]
+
+    ⚠  n ∈ [0,N] -- f.n
+
+    ⚠  n ∈ [0,N) -- a.n
+
+    z ≡ p.n ∧ a.n = f.n ↑ a.n ∧
+    y = f.n ↑ a.n
+
+■
