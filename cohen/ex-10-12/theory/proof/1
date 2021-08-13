@@ -35,4 +35,8 @@
 
     p.n ∧ a.n = ↑( i : 0 ≤ i ≤ n : a.i )
 
+≡   Definition of f
+
+    p.n ∧ a.n = f.(n+1)
+
 ■
