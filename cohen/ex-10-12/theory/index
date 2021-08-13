@@ -49,4 +49,6 @@
       
     { inv.(n+1) }
 
+[9] a.n = y ↑ a.n  ≡  y ≤ a.n
+
 ■   COHEN-EX-10-12
