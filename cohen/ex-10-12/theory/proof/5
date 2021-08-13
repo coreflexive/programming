@@ -1,0 +1,23 @@
+•   inv.0 ≡ z ∧ y = -∞
+
+⊩   inv.0
+
+≡   Definition of inv
+
+    ( n : n ∈ [0,N] : z ≡ p.n ∧ y = f.n ).0
+
+≡   λ comp
+
+    ✓  0 ∈ [0,N]
+
+    z ≡ p.0 ∧ y = f.0
+
+≡   Theory [0,3]
+
+    z ≡ true ∧ y = -∞
+
+≡   Identity of ≡
+
+    z ∧ y = -∞
+
+■
