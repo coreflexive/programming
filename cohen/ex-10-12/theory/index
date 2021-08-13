@@ -45,7 +45,7 @@
 
 [8] { inv.n ∧ n ≠ N }
       
-      y:= f.n ↑ a.n ; z:= p.n ∧ a.n = y 
+      z,y:= p.n ∧ a.n = f.n ↑ a.n,f.n ↑ a.n 
       
     { inv.(n+1) }
 

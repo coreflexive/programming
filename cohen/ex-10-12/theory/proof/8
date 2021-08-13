@@ -1,0 +1,9 @@
+•   { inv.n ∧ n ≠ N }
+      
+      z,y:= p.n ∧ a.n = f.n ↑ a.n,f.n ↑ a.n  
+      
+    { inv.(n+1) }
+
+≡   Hoare triple
+
+    inv.n ∧ n ≠ N ⇒ wp.().()
