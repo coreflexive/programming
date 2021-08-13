@@ -41,4 +41,12 @@
 
     ⚠  n ∈ [0,N)
 
+[7] { N ≥ 0 } z,y,n:= true,-∞,0 { inv.0 }
+
+[8] { inv.n ∧ n ≠ N }
+      
+      y:= f.n ↑ a.n ; z:= p.n ∧ a.n = y 
+      
+    { inv.(n+1) }
+
 ■   COHEN-EX-10-12
