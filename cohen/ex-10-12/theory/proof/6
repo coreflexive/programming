@@ -1,7 +1,7 @@
 •   inv.(n+1) ≡ z ≡ p.n ∧ a.n = f.n ↑ a.n ∧
                 y = f.n ↑ a.n
 
-    ⚠  n ∈ [0,N)
+    ⚠  n ∈ ? // n ∈ [0,N)
 
 ⊩   inv.(n+1)
 
