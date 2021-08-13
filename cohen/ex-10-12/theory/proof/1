@@ -1,0 +1,34 @@
+•   p.(n+1) ≡ p.n ∧ ∀( i : 0 ≤ i < n : a.i ≤ a.n ),
+    
+    providing n+1 ∈ [0,N]
+
+⊩   p.(n+1)
+
+≡   Definition of p
+
+    ( n : n ∈ [0,N] : ∀( i,j : 0 ≤ i < j < n : a.i ≤ a.j )).(n+1)
+
+≡   λ comp
+
+    •   n+1 ∈ [0,N]
+
+    ∀( i,j : 0 ≤ i < j < n+1 : a.i ≤ a.j )
+
+≡   Inequalities
+
+    ∀( i,j : 0 ≤ i < j ∧ (j < n ∨ j = n) : a.i ≤ a.j )
+
+≡   Range-split
+
+    ∀( i,j : 0 ≤ i < j < n : a.i ≤ a.j ) ∧
+    ∀( i,j : 0 ≤ i < j ∧ j = n : a.i ≤ a.j )
+
+≡   Definition of p
+
+    p.n ∧ ∀( i,j : 0 ≤ i < j ∧ j = n : a.i ≤ a.j )
+
+≡   One-point
+
+    p.n ∧ ∀( i : 0 ≤ i < n : a.i ≤ a.n )
+
+■
