@@ -36,4 +36,9 @@
 
 [5] inv.0 ≡ z ∧ y = -∞
 
+[6] inv.(n+1) ≡ z ≡ p.n ∧ a.n = f.n ↑ a.n ∧
+                y = f.n ↑ a.n
+
+    ⚠  n ∈ [0,N)
+
 ■   COHEN-EX-10-12
