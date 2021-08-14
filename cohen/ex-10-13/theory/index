@@ -30,4 +30,10 @@
 
 [4] { N ≥ 0 } n,z,y:= true,true,0 { inv(n,z,y) }
 
+[5] { inv.(n,z,y) ∧ n ≠ N }
+
+      z,y:= z ∧ (y ∨ a.n), y ∧ ¬a.n
+
+    { inv.(n+1,z,y) }
+
 ■   COHEN-EX-10-13
