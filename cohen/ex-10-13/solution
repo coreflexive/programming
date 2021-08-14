@@ -1,0 +1,12 @@
+  var a : array [0,N) of 𝔹
+; var z,y : 𝔹
+; var n : int
+
+; z,y,n:= true, true, 0
+
+; do n ≠ N →
+    z,y:= z ∧ (y ∨ a.n), y ∧ ¬a.n
+  ; n:= n+1
+  od
+
+{ z ≡ ∀( i,j : 0 ≤ i ≤ j < N : a.i ⇒ a.j ) }
