@@ -1,0 +1,45 @@
+•   { N ≥ 0 } n,z,y:= E,F,G { inv(n,z,y) }
+
+(1) E = ? // F = true
+
+(2) F = ? // F = true
+
+(3) G = ? // G = 0
+
+≡   Hoare triple
+
+    N ≥ 0 ⇒ wp.(n,z,y:= E,F,G).(inv(n,z,y))
+
+≡   Prove ⇒
+
+    •   wp.(n,z,y:= E,F,G).(inv(n,z,y))
+
+    (4) N ≥ 0
+
+    ≡   Assignment
+
+        •   n ∈ [0,N] // 0 ∈ [0,N]
+
+        (inv(n,z,y))[n,z,y:= E,F,G]
+
+    ≡   λ comp
+
+        E ≡ p.G ∧ F ≡ q.G ∧ 0 ≤ G ≤ N
+
+    ≡   Assumption (3)
+
+        E ≡ p.0 ∧ F ≡ q.0 ∧ 0 ≤ 0 ≤ N
+
+    ≡   ≤ reflexive; Assumption (4)
+
+        E ≡ p.0 ∧ F ≡ q.0
+
+    ≡   Theory [0,2]
+
+        E ≡ true ∧ F ≡ true   -- Assumptions (1,2)
+
+    ■
+
+⋯   true
+
+■

@@ -26,6 +26,8 @@
 
 +   inv : [0,N] → 𝔹 → 𝔹 → 𝔹
     
-    inv = ( n,z,y : : z ≡ p.n ∧ y ≡ q.n ∧ 0 ≤ n ≤ N )
+    inv = ( n,z,y : : z ≡ p.n ∧ y ≡ q.n )
+
+[4] { N ≥ 0 } n,z,y:= true,true,0 { inv(n,z,y) }
 
 ■   COHEN-EX-10-13
