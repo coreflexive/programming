@@ -1,0 +1,23 @@
+•   p.0 ≡ true
+
+⊩   p.0
+
+≡   Definition of p
+
+    ( n : n ∈ [0,N] : ∀( i,j : 0 ≤ i ≤ j < n : a.i ⇒ a.j ) ).0
+
+≡   λ comp
+
+    ✓  0 ∈ [0,N]
+
+    ∀( i,j : 0 ≤ i ≤ j < 0 : a.i ⇒ a.j )
+
+≡   Contradiction
+
+    ∀( i,j : false : a.i ⇒ a.j )
+
+≡   Empty range
+
+    true
+
+■
