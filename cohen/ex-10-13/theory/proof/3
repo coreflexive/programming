@@ -1,0 +1,27 @@
+•   q.(n+1) ≡ q.n ∧ ¬a.n
+
+-   n ∈ [0,N)
+
+⊩   q.(n+1)
+
+≡   Definition of q
+
+    •   n+1 ∈ [0,N]
+
+    ( n : n ∈ [0,N] : ∀( i : 0 ≤ i ≤ n-1 : ¬a.i ) ).(n+1)
+
+≡   λ comp
+
+    ∀( i : 0 ≤ i ≤ n : ¬a.i )
+
+≡   Split-off term
+
+    ∀( i : 0 ≤ i ≤ n-1 : ¬a.i ) ∧ ¬a.n
+
+≡   Definition of q
+
+    •   n ∈ [0,N]
+
+    q.n ∧ ¬a.n
+
+■
