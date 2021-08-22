@@ -1,0 +1,21 @@
+•   m.0 = -∞
+
+⊩   m.0
+
+=   Definition of m
+
+    ( n :: ↑( i : 0 ≤ i < n : a.i ) ).0
+
+=   λ comp
+
+    ↑( i : 0 ≤ i < 0 : a.i )
+
+=   Contradiction
+
+    ↑( i : false : a.i )
+
+=   Empty range
+
+    -∞
+
+■

@@ -1,0 +1,45 @@
+•   { inv.(n,z) ∧ n ≠ N } z:= E { inv.(n+1,z) }
+
+(1) E = ? // E = z ↑ a.n
+
+≡   Hoare triple
+
+    inv.(n,z) ∧ n ≠ N ⇒ wp.(z:= E).(inv.(n+1,z))
+
+≡   Prove ⇒
+
+    •   wp.(z:= E).(inv.(n+1,z))
+
+    (2) 0 ≤ n ≤ N
+    
+    (3) z = m.n
+    
+    (4) n ≠ N
+
+    ≡   Assignment
+
+        inv.(n+1,E)
+
+    ≡   Definition of inv
+
+        ( n,z : 0 ≤ n ≤ N : z = m.n ).(n+1,E)
+
+    ≡   λ comp
+
+        •   0 ≤ n+1 ≤ N
+
+        E = m.(n+1)
+
+    ≡   Theory [1]
+
+        E = m.n ↑ a.n
+
+    ≡   Assumption (3)
+
+        E = z ↑ a.n
+
+    ■
+
+⋯   true
+
+■

@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+def maximum(a = [], len = a.length)
+  n,z = 0,-Float::INFINITY
+  while n != len do
+    z = [z,a[n]].max
+    n = n+1
+  end
+  z
+end
+
+binding.pry
