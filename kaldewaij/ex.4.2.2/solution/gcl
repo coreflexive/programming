@@ -1,0 +1,10 @@
+⟦ con N : int { N ≥ 0 }
+; con a : array [0,N) of int
+; var z : int
+; n,z:= 0,-∞
+; do n ≠ N →
+    z:= z ↑ a.n
+  ; n:= n+1
+  od
+{ z = ↑( i : 0 ≤ i < N : a.i ) }
+⟧
