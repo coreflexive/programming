@@ -1,0 +1,6 @@
+⟦ con N : int { N ≥ 1 }
+; con a : array [0,N) of int
+; var z : int
+; S
+{ z = ↑( p,q : 0 ≤ p < q < N : a.p - a.q ) }
+⟧
