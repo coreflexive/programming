@@ -1,0 +1,25 @@
+•   f.1 = a.0
+
+-   1 ≤ #a
+
+⊩   f.1
+
+=   Definition of f
+
+    ( n : n ≤ #a : ↑( p : 0 ≤ p < n : a.p ) ).1
+
+=   λ comp
+
+    •   1 ≤ #a    -- Assumption
+
+    ↑( p : 0 ≤ p < 1 : a.p )
+
+=   Inequalities
+
+    ↑( p : 0 = p : a.p )
+
+=   One-point
+
+    a.0
+
+■

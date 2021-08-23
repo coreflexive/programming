@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+def max_pair_difference(a,len)
+  n,z,y = 1,-Float::INFINITY,a[0]
+  while n != len do
+    z,y = [z,y - a[n]].max, [y, a[n]].max
+    n = n+1
+  end
+  z
+end
+
+binding.pry
