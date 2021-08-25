@@ -1,0 +1,68 @@
+§   KALDEWAIJ-EX-4-3-1
+
++   c : ℤ → ℤ
+
+    c = ( n :: #( p,q : 0 ≤ p < q < n : a.p * a.q ≥ 0 ) )
+
++   f = ( n :: #( p : 0 ≤ p < n : a.p ≤ 0 ) )
+
++   g = ( n :: #( p : 0 ≤ p < n : a.p ≥ 0 ) )
+
++   inv = inv.(n,z,y,x)( n : 0 ≤ n ≤ #a : z = c.n ∧ y = f.n ∧ x = g.n )
+
+[0]   c.0 = 0
+
+[1]   c.(n+1) = c.n + #( p : 0 ≤ p < n : a.p * a.n ≥ 0 )
+
+[2]   a.n < 0 ⇒ #( p : 0 ≤ p < n : a.p * a.n ≥ 0 ) = f.n
+
+[3]   a.n = 0 ⇒ #( p : 0 ≤ p < n : a.p * a.n ≥ 0 ) = n
+
+[4]   a.n > 0 ⇒ #( p : 0 ≤ p < n : a.p * a.n ≥ 0 ) = g.n
+
+[5]   a.n < 0 ⇒ c.(n+1) = c.n + f.n
+
+[6]   a.n = 0 ⇒ c.(n+1) = c.n + n
+
+[7]   a.n > 0 ⇒ c.(n+1) = c.n + g.n
+
+[8]   f.0 = 0
+
+[9]   g.0 = 0
+
+[10]  f.(n+1) = f.n + [a.n ≤ 0]
+
+[11]  g.(n+1) = g.n + [a.n ≥ 0]
+
+[12]  { 1 ≤ #a } n,z,y,x:= 0,0,0,0 { inv.(n,z,y,x) }
+
+[13]  { inv.(n,z,y,x) ∧ a.n < 0 ∧ n ≠ #a }
+
+        z,y,x:= z+y,y+1,x
+
+      { inv.(n+1,z,y,x) }
+
+[14]  { inv.(n,z,y,x) ∧ a.n = 0 ∧ n ≠ #a }
+
+        z,y,x:= z+n,y+1,x+1
+
+      { inv.(n+1,z,y,x) }
+
+[15]  { inv.(n,z,y,x) ∧ a.n > 0 ∧ n ≠ #a }
+
+        z,y,x:= z+x,y,x+1
+
+      { inv.(n+1,z,y,x) }
+
+[16]  { inv.(n,z,y,x) ∧ n ≠ #a }
+
+        if a.n < 0 → z,y:= z+y,y+1
+         ▯ a.n = 0 → z,y,x:= z + n,y+1,x+1
+         ▯ a.n > 0 → z,x:= z+x,x+1
+        fi
+      
+      ; n:= n+1
+
+      { inv.(n+1,z,y,x) }
+
+■   KALDEWAIJ-EX-4-3-1

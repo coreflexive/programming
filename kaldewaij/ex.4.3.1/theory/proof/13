@@ -1,0 +1,69 @@
+•   { inv.(n,z,y,x) ∧ a.n < 0 ∧ n ≠ #a }
+      z,y,x:= E,F,G
+    { inv.(n+1,z,y,x) }
+
+(1) E = ? // E = z + y
+
+(2) F = ? // F = y + 1
+
+(3) G = ? // G = x
+
+≡   Hoare triple
+
+    inv.(n,z,y,x) ∧ a.n < 0 ∧ n ≠ #a ⇒ wp.(z,y,x:= E,F,G).(inv.(n+1,z,y,x))
+
+≡   Prove ⇒
+
+    •   wp.(z,y,x:= E,F,G).(inv.(n+1,z,y,x))
+
+    (4) 0 ≤ n ≤ #a
+    
+    (5) z = c.n
+    
+    (6) y = f.n
+    
+    (7) x = g.n
+
+    (8) a.n < 0
+
+    (9) n ≠ #a
+
+    ≡   Assignment
+
+        inv.(n+1,E,F,G)
+
+    ≡   Definition of inv
+
+        •   0 ≤ n+1 ≤ #a
+        
+        E = c.(n+1) ∧ F = f.(n+1) ∧ G = g.(n+1)
+
+    ≡   Theory [5], using assumption (8)
+
+        E = c.n + f.n ∧ F = f.(n+1) ∧ G = g.(n+1)
+
+    ≡   Theory [10,11]
+
+        E = c.n + f.n ∧ F = f.n + [a.n ≤ 0] ∧ G = g.n + [a.n ≥ 0]
+
+    ≡   Assumption (8)
+
+        E = c.n + f.n ∧ F = f.n + [true] ∧ G = g.n + [false]
+
+    ≡   Evaluate Iversonian
+
+        E = c.n + f.n ∧ F = f.n + 1 ∧ G = g.n + 0
+
+    ≡   Arithmetic
+
+        E = c.n + f.n ∧ F = f.n + 1 ∧ G = g.n
+
+    ≡   Assumptions (5,6,7)
+
+        E = z + y ∧ F = y + 1 ∧ G = x
+
+    ■
+
+⋯   true
+
+■

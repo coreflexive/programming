@@ -1,0 +1,21 @@
+•   #( p : 0 ≤ p < n : a.p * a.n ≥ 0 )
+
+-   a.n = 0
+
+=   Inequalities, using assumption
+
+    #( p : 0 ≤ p < n : a.p * 0 ≥ 0 )
+
+=   Zero of *
+
+    #( p : 0 ≤ p < n : 0 ≥ 0 )
+
+=   ≥ reflexive
+
+    #( p : 0 ≤ p < n : true )
+
+=   Full-term
+
+    n
+
+■

@@ -1,0 +1,13 @@
+•   c.(n+1)
+
+-   a.n > 0
+
+=   Theory [1]
+
+    c.n + #( p : 0 ≤ p < n : a.p * a.n ≥ 0 )
+
+=   Theory [4], using assumption
+
+    c.n + g.n
+
+■
