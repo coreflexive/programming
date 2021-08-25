@@ -1,0 +1,19 @@
+•   f.0
+
+=   Definition of f
+
+    ( n :: #( p : 0 ≤ p < n : a.p ≤ 0 ) ).0
+
+=   λ comp
+
+    #( p : 0 ≤ p < 0 : a.p ≤ 0 )
+
+=   Contradiction
+
+    #( p : false : a.p ≤ 0 )
+
+=   Empty-range
+
+    0
+
+■

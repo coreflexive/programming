@@ -1,0 +1,32 @@
+•   c.(n+1) = c.n + #( p : 0 ≤ p < n : a.p * a.n ≥ 0 )
+
+⊩   c.(n+1)
+
+=   Definition of c
+
+    ( n :: #( p,q : 0 ≤ p < q < n : a.p * a.q ≥ 0 ) ).(n+1)
+
+=   λ comp
+
+    #( p,q : 0 ≤ p < q < n+1 : a.p * a.q ≥ 0 )
+
+=   Inequalities
+
+    #( p,q : 0 ≤ p < q ∧ (q < n ∨ q = n) : a.p * a.q ≥ 0 )
+
+=   Range-split
+
+    #( p,q : 0 ≤ p < q < n : a.p * a.q ≥ 0 ) +
+    #( p,q : 0 ≤ p < q ∧ q = n : a.p * a.q ≥ 0 )
+
+=   Definition of c
+
+    c.n +
+    #( p,q : 0 ≤ p < q ∧ q = n : a.p * a.q ≥ 0 )
+
+=   One-point
+
+    c.n +
+    #( p : 0 ≤ p < n : a.p * a.n ≥ 0 )
+
+■

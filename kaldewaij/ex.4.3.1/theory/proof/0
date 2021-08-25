@@ -1,0 +1,21 @@
+•   c.0 = 0
+
+⊩   c.0
+
+=   Definition of c
+
+    ( n :: #( p,q : 0 ≤ p < q < n : a.p * a.q ≥ 0 ) ).0
+
+=   λ comp
+
+    #( p,q : 0 ≤ p < q < 0 : a.p * a.q ≥ 0 )
+
+=   Contradiction
+
+    #( p,q : false : a.p * a.q ≥ 0 )
+
+=   Empty range
+
+    0
+
+■
