@@ -1,0 +1,49 @@
+•   { inv.(n,z,y) ∧ n ≠ N } z,y:= E,F { inv.(n+1,z,y) }
+
+(1) E = ? // E = (y ∧ a.n) ∨ (z ∧ ¬a.n)
+
+(2) F = ? // F = y ∧ a.n
+
+≡   Hoare triple
+
+    inv.(n,z,y) ∧ n ≠ N ⇒ wp.(z,y:= E,F).(inv.(n+1,z,y))
+
+≡   Prove ⇒
+
+    •   wp.(z,y:= E,F).(inv.(n+1,z,y))
+
+    (3) 0 ≤ n ≤ #a
+    
+    (4) z ≡ p.n
+    
+    (5) y ≡ f.n
+    
+    (6) n ≠ N
+
+    ≡   Assignment
+
+        inv.(n+1,E,F)
+
+    ≡   Definition of inv
+
+        ( n,z,y : 0 ≤ n ≤ #a : z ≡ p.n ∧ y ≡ f.n ).(n+1,E,F)
+
+    ≡   λ comp
+
+        •   0 ≤ n+1 ≤ #a
+
+        E ≡ p.(n+1) ∧ F ≡ f.(n+1)
+
+    ≡   Theory [4,7]
+
+        E ≡ (f.n ∧ a.n) ∨ (p.n ∧ ¬a.n) ∧ F ≡ f.n ∧ a.n
+
+    ≡   Assumptions (4,5)
+
+        E ≡ (y ∧ a.n) ∨ (z ∧ ¬a.n) ∧ F ≡ y ∧ a.n
+
+    ■
+
+⋯   true
+
+■

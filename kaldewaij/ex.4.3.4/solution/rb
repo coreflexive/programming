@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+def true_false_pivot(a = [], len = a.length)
+  n,z,y = 0,true,true
+  while n != len do
+    z,y = (y && a[n]) || (z && !a[n]), y && a[n]
+    n = n+1
+  end
+  z
+end
+
+binding.pry

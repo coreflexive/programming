@@ -1,0 +1,11 @@
+•   p.(n+1)
+
+≡   Definition of p
+
+    ( n :: ∃( i : 0 ≤ i ≤ n : q.i.n ) ).(n+1)
+
+≡   λ comp
+
+    ∃( i : 0 ≤ i ≤ n+1 : q.i.(n+1) )
+
+■

@@ -1,0 +1,23 @@
+•   q.0.0
+
+≡   Definition of q
+
+    ( m,n :: ∀( j : 0 ≤ j < m : a.j ) ∧ ∀( j : m ≤ j < n : ¬a.j) ).0.0
+
+≡   λ comp
+
+    ∀( j : 0 ≤ j < 0 : a.j ) ∧ ∀( j : 0 ≤ j < 0 : ¬a.j)
+
+≡   Contradiction, twice
+
+    ∀( j : false : a.j ) ∧ ∀( j : false : ¬a.j)
+
+≡   Empty-range, twice
+
+    true ∧ true
+
+≡   ∧ idempotent
+
+    true
+
+■

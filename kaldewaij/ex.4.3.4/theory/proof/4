@@ -1,0 +1,31 @@
+•   p.(n+1)
+
+≡   Theory [2]
+
+    ∃( i : 0 ≤ i ≤ n+1 : q.i.(n+1) )
+
+≡   Split-off term
+
+    ∃( i : 0 ≤ i ≤ n : q.i.(n+1) ) ∨ q.(n+1).(n+1)
+
+≡   Theory [5]
+
+    ∃( i : 0 ≤ i ≤ n : q.i.(n+1) ) ∨ (f.n ∧ a.n)
+
+≡   Theory [3]
+
+    ∃( i : 0 ≤ i ≤ n : q.i.n ∧ ¬a.n ) ∨ (f.n ∧ a.n)
+
+≡   ∧ distributes over ∃
+
+    (∃( i : 0 ≤ i ≤ n : q.i.n ) ∧ ¬a.n) ∨ (f.n ∧ a.n)
+
+≡   Definition of p
+
+    (p.n ∧ ¬a.n) ∨ (f.n ∧ a.n)
+
+≡   ∨ symmetric
+
+    (f.n ∧ a.n) ∨ (p.n ∧ ¬a.n)
+
+■

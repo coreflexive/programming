@@ -1,0 +1,23 @@
+•   p.0
+
+≡   Definition of p
+
+    ( n :: ∃( i : 0 ≤ i ≤ n : q.i.n ) ).0
+
+≡   λ comp
+
+    ∃( i : 0 ≤ i ≤ 0 : q.i.0 )
+
+≡   Inequalities
+
+    ∃( i : 0 = i : q.i.0 )
+
+≡   One-point
+
+    q.0.0
+
+≡   Theory [1]
+
+    true
+
+■

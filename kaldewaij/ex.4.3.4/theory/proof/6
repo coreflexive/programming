@@ -1,0 +1,19 @@
+•   f.0
+
+≡   Definition of f
+
+    ( n :: ∀( j : 0 ≤ j < n : a.j ) ).0
+
+≡   λ comp
+
+    ∀( j : 0 ≤ j < 0 : a.j )
+
+≡   Contradiction
+
+    ∀( j : false : a.j )
+
+≡   Empty-range
+
+    true
+
+■
