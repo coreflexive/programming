@@ -1,0 +1,27 @@
+•   ↑( p : 0 ≤ p < n : |a.p - a.n| )
+
+=   Definition of absolute
+
+    ↑( p : 0 ≤ p < n : (a.p - a.n) ↑ -(a.p - a.n) )
+
+=   Distributivity
+
+    ↑( p : 0 ≤ p < n : a.p - a.n ) ↑ ↑( p : 0 ≤ p < n : -(a.p - a.n) )
+
+=   Property of ↑
+
+    ↑( p : 0 ≤ p < n : a.p - a.n ) ↑ (-↓( p : 0 ≤ p < n : a.p - a.n ))
+
+=   Distributivity
+
+    (↑( p : 0 ≤ p < n : a.p ) - a.n) ↑ (-↓( p : 0 ≤ p < n : a.p ) - a.n )
+
+=   Distributivity
+
+    (↑( p : 0 ≤ p < n : a.p )) ↑ (-↓( p : 0 ≤ p < n : a.p )) - a.n
+
+=   Definitions of f and g
+
+    ((f.n) ↑ (-g.n)) - a.n
+
+■

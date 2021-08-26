@@ -1,0 +1,11 @@
+•   m.(n+1)
+
+=   Theory [1]
+
+    m.n ↑ ↑( p : 0 ≤ p < n : |a.p - a.n| )
+
+=   Theory [2]
+
+    m.n ↑ (((f.n) ↑ (-g.n)) - a.n)
+
+■

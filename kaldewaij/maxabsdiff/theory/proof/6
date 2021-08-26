@@ -1,0 +1,19 @@
+•   g.0
+
+=   Definition of g
+
+    ( n :: ↓( p : 0 ≤ p < n : a.p ) ).0
+
+=   λ comp
+
+    ↓( p : 0 ≤ p < 0 : a.p )
+
+=   Contradiction
+
+    ↓( p : false : a.p )
+
+=   Empty-range
+
+    ∞
+
+■

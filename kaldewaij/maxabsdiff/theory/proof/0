@@ -1,0 +1,19 @@
+•   m.0
+
+=   Definition of m
+
+    ( n :: ↑( p,q : 0 ≤ p < q < n : |a.p - a.q| ) ).1
+
+=   λ comp
+
+    ↑( p,q : 0 ≤ p < q < 1 : |a.p - a.q| )
+
+=   Contradiction
+
+    ↑( p,q : false : |a.p - a.q| )
+
+=   Empty range
+
+    -∞
+
+■

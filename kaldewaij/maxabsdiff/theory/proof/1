@@ -1,0 +1,29 @@
+•   m.(n+1)
+
+=   Definition of m
+
+    ( n :: ↑( p,q : 0 ≤ p < q < n : |a.p - a.q| ) ).(n+1)
+
+=   λ comp
+
+    ↑( p,q : 0 ≤ p < q < n+1 : |a.p - a.q| )
+
+=   Inequalities
+
+    ↑( p,q : 0 ≤ p < q ∧ (q < n ∨ q = n) : |a.p - a.q| )
+
+=   Range-split
+
+    ↑( p,q : 0 ≤ p < q < n : |a.p - a.q| ) ↑
+    ↑( p,q : 0 ≤ p < q ∧ q = n : |a.p - a.q| )
+
+=   Definition of m
+
+    m.n ↑
+    ↑( p,q : 0 ≤ p < q ∧ q = n : |a.p - a.q| )
+
+=   One-point
+
+    m.n ↑ ↑( p : 0 ≤ p < n : |a.p - a.n| )
+
+■
