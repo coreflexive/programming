@@ -1,0 +1,6 @@
+⟦ con N : int { N ≥ 0 }
+; con a : array [0,N) of bool
+; var z : bool
+; S
+  { z ≡ ∃( i : 0 ≤ i ≤ N : ∀( j : 0 ≤ j < i : a.j ) ∧ ∀( j : i ≤ j < N : ¬a.j) ) }
+⟧
