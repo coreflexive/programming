@@ -1,0 +1,19 @@
+•   q.i.(n+1)
+
+≡   Definition of q
+
+    ( m,n :: ∀( j : 0 ≤ j < m : a.j ) ∧ ∀( j : m ≤ j < n : ¬a.j) ).m.(n+1)
+
+≡   λ comp
+
+    ∀( j : 0 ≤ j < m : a.j ) ∧ ∀( j : m ≤ j < n+1 : ¬a.j)
+
+≡   Split-off term
+
+    ∀( j : 0 ≤ j < m : a.j ) ∧ ∀( j : m ≤ j < n : ¬a.j) ∧ ¬a.n
+
+≡   Definition of q
+
+    q.m.n ∧ ¬a.n
+
+■

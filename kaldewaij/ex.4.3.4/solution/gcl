@@ -1,0 +1,11 @@
+⟦ con N : int { N ≥ 0 }
+; con a : array [0,N) of bool
+; var n : int
+; var z,y : bool
+; n,z,y:= 0,true,true
+; do n ≠ N →
+    z,y:= (y ∧ a.n) ∨ (z ∧ ¬a.n), y ∧ a.n
+  ; n:= n+1
+  od
+  { z ≡ ∃( i : 0 ≤ i ≤ N : ∀( j : 0 ≤ j < i : a.j ) ∧ ∀( j : i ≤ j < N : ¬a.j) ) }
+⟧

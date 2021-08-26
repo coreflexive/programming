@@ -1,0 +1,33 @@
+§   KALD-EX-4-3-4
+
++   p = ( n :: ∃( i : 0 ≤ i ≤ n : q.i.n ) )
+
++   q = ( m,n :: ∀( j : 0 ≤ j < m : a.j ) ∧ ∀( j : m ≤ j < n : ¬a.j) )
+
++   f = ( n :: ∀( j : 0 ≤ j < n : a.j ) )
+
++   inv = ( n,z,y : 0 ≤ n ≤ #a : z ≡ p.n ∧ y ≡ f.n )
+
+[0]   p.0 ≡ true
+
+[1]   q.0.0 ≡ true
+
+[2]   p.(n+1) ≡ ∃( i : 0 ≤ i ≤ n+1 : q.i.(n+1) )
+
+[3]   q.m.(n+1) ≡ q.m.n ∧ ¬a.n
+
+[4]   p.(n+1) ≡ (f.n ∧ a.n) ∨ (p.n ∧ ¬a.n)
+
+[5]   q.(n+1).(n+1) ≡ f.n ∧ a.n
+
+[6]   f.0 ≡ true
+
+[7]   f.(n+1) ≡ f.n ∧ a.n
+
+[8]   p.(n+1) ≡ f.(n+1) ∨ (p.n ∧ ¬a.n)
+
+[9]   { 0 ≤ #a } n,z,y:= 0,true,true { inv.(n,z,y) }
+
+[10]  { inv.(n,z,y) ∧ n ≠ N } z,y:= (y ∧ a.n) ∨ (z ∧ ¬a.n), y ∧ a.n { inv.(n+1,z,y) }
+
+■   KALD-EX-4-3-4
