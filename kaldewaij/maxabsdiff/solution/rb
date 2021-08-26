@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+def maxabsdiff(a,len)
+  n,z,y,x = 0,-Float::INFINITY,-Float::INFINITY,Float::INFINITY
+  while n != len do
+    z,y,x = [z,[y,-x].max - a[n]].max, [y,a[n]].max, [x,a[n]].min
+    n = n+1
+  end
+  z
+end
+
+binding.pry

@@ -1,0 +1,31 @@
+§   MAXABSDIFF
+
++   m = ( n :: ↑( p,q : 0 ≤ p < q < n : |a.p - a.q| ) )
+
++   f = ( n :: ↑( p : 0 ≤ p < n : a.p ) )
+
++   g = ( n :: ↓( p : 0 ≤ p < n : a.p ) )
+
++   inv = ( n : 0 ≤ n ≤ #a : z = m.n ∧ y = f.n ∧ x = g.n )
+
+[0] m.0 = -∞
+
+[1] m.(n+1) = m.n ↑ ↑( p : 0 ≤ p < n : |a.p - a.n| )
+
+[2] ↑(p : 0 ≤ p < n : |a.p - a.n| ) = ((f.n) ↑ (-g.n)) - a.n
+
+[3] m.(n+1) = m.n ↑ (((f.n) ↑ (-g.n)) - a.n)
+
+[4] f.0 = -∞
+
+[5] f.(n+1) = f.n ↑ a.n
+
+[6] g.0 = ∞
+
+[7] g.(n+1) = g.n ↓ a.n
+
+[8] { #a ≥ 1 } n,z,y,x:= 0,-∞,-∞,∞ { inv.(n,z,y,x) }
+
+[9] { inv.(n,z,y,x) ∧ n ≠ #a } z,y,x:= z ↑ ((y ↑ -x) - a.n), y ↑ a.n, x ↓ a.n { inv.(n+1,z,y,x) }
+
+■   MAXABSDIFF

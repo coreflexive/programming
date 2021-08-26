@@ -1,0 +1,47 @@
+•   { #a ≥ 1 } n,z,y,x:= 0,E,F,G { inv.(n,z,y,x) }
+
+(1) E = ? // E = -∞
+
+(2) F = ? // F = -∞
+
+(3) G = ? // G = -∞
+
+≡   Hoare triple
+
+    #a ≥ 1 ⇒ wp.(n,z,y,x:= 0,E,F,G).(inv.(n,z,y,x))
+
+≡   Prove ⇒
+
+    •   wp.(n,z,y,x:= 0,E,F,G).(inv.(n,z,y,x))
+
+    (4) #a ≥ 1
+
+    ≡   Assignment
+
+        inv.(0,E,F,G)
+
+    ≡   Definition of inv
+
+        ( n : 0 ≤ n ≤ #a : z = m.n ∧ y = f.n ∧ x = g.n ).(0,E,F,G)
+
+    ≡   λ comp
+
+        •   0 ≤ 0 ≤ #a
+
+        ≡   ≤ reflexive
+
+            0 ≤ #a  -- Assumption (3)
+
+        ■
+
+        E = m.0 ∧ F = f.0 ∧ G = g.0
+
+    ≡   Theory [0,4]
+
+        E = -∞ ∧ F = -∞ ∧ G = -∞
+
+    ■
+
+⋯   true
+
+■

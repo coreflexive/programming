@@ -1,0 +1,10 @@
+⟦ con N : int { #a ≥ 1 }
+; con a: array [0,N) of int
+; var z : int
+; n,z,y,x:= 0,-∞,-∞,∞
+; do n ≠ #a →
+    z,y,x:= z ↑ ((y ↑ -x) - a.n), y ↑ a.n, x ↓ a.n
+  ; n:= n+1
+  od
+  { z = ↑(p,q : 0 ≤ p < q < N : |a.p - a.q| ) }
+⟧
