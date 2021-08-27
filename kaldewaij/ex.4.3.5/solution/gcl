@@ -1,0 +1,11 @@
+  con N : int { N ≥ 0 }
+; con a : array [0,N) of int
+; n,z,y:= 0,0,0
+; do n ≠ #a →
+    if a.n ≥ 0 → y:= (y + 1) ↑ 0
+     ▯ a.n < 0 → y:= (y - 1) ↑ 0
+    fi
+  ; z:= z ↑ y
+  ; n:= n+1
+  od
+  { z = ↑( p,q : 0 ≤ p ≤ q ≤ N : credit.p.q ) }

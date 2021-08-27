@@ -8,4 +8,50 @@
 
 +   bz = ( p,q :: #( i : p ≤ i < q : a.i < 0) )
 
++   f = ( n :: ↑( p : 0 ≤ p ≤ n : credit.p.n ) )
+
++   inv = ( n,z,y : 0 ≤ n ≤ #a : z = m.n ∧ y = f.n )
+
+[0]   m.0 = credit.0.0  // m.0 = 0
+
+[1]   credit.p.p = pz.p.p - bz.p.p // credit.p.p = 0
+
+[1a]  credit.0.0 = pz.0.0 - bz.0.0
+
+[2]   pz.p.p = 0
+
+[2a]  pz.0.0 = 0
+
+[3]   bz.p.p = 0
+
+[3a]  bz.0.0 = 0
+
+[4]   m.(n+1) = m.n ↑ f.(n+1)
+
+[5]   credit.p.(q+1) = pz.p.(n+1) - bz.p.(n+1)
+
+[6]   pz.p.(q+1) = pz.p.q + [a.q ≥ 0]
+
+[7]   bz.p.(q+1) = bz.p.q + [a.q < 0]
+
+[8]   credit.p.(q+1) = credit.p.q + [a.q ≥ 0] - [a.q < 0]
+
+[9]   f.0 = 0
+
+[10]  f.(n+1) = (f.n + [a.n ≥ 0] - [a.n < 0]) ↑ 0
+
+[11]  a.n ≥ 0 ⇒ f.(n+1) = (f.n + 1) ↑ 0
+
+[12]  a.n < 0 ⇒ f.(n+1) = (f.n - 1) ↑ 0
+
+[13]  { 0 ≤ #a } n,z,y:= 0,0,0 { inv.(n,z,y) }
+
+[14]  { inv.(n,z,y) ∧ a.n ≥ 0 }
+        y:= (y + 1) ↑ 0
+      { y = f.(n+1) }
+
+[15]  { inv.(n,z,y) ∧ a.n < 0 }
+        y:= (y - 1) ↑ 0
+      { y = f.(n+1) }
+
 ■   KALD-EX-4-3-5

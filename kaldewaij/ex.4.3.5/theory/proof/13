@@ -1,0 +1,45 @@
+•   { 0 ≤ #a } n,z,y:= 0,E,F { inv.(n,z,y) }
+
+(1) E = ? // E = 0
+
+(2) F = ? // F = 0
+
+≡   Hoare triple
+
+    0 ≤ #a ⇒ wp.(n,z,y:= 0,E,F).(inv.(n,z,y))
+
+≡   Prove ⇒
+
+    •   wp.(n,z,y:= 0,E,F).(inv.(n,z,y))
+
+    (3) 0 ≤ #a
+
+    ≡   Assignment
+
+        inv.(0,E,F)
+
+    ≡   Definition of inv
+
+        ( n,z,y : 0 ≤ n ≤ #a : z = m.n ∧ y = f.n ).(0,E,F)
+
+    ≡   λ comp
+
+        •   0 ≤ 0 ≤ #a
+
+        ≡   ≤ reflexive
+
+            0 ≤ #a
+
+        ■
+
+        E = m.0 ∧ F = f.0
+
+    ≡   Theory [0,9]
+
+        E = 0 ∧ F = 0
+
+    ■
+
+⋯   true
+
+■

@@ -1,0 +1,19 @@
+•   bz.0.0
+
+=   Definition of bz
+
+    ( p,q :: #( i : p ≤ i < q : a.i < 0) ).0.0
+
+=   λ comp
+
+    #( i : 0 ≤ i < 0 : a.i < 0)
+
+=   Contradiction
+
+    #( i : false : a.i < 0)
+
+=   Empty-range
+
+    0
+
+■

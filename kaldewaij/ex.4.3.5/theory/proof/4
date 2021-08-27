@@ -1,0 +1,34 @@
+•   m.(n+1)
+
+=   Definition of m
+
+    ( n :: ↑( p,q : 0 ≤ p ≤ q ≤ n : credit.p.q ) ).(n+1)
+
+=   λ comp
+
+    ↑( p,q : 0 ≤ p ≤ q ≤ n+1 : credit.p.q )
+
+=   Inequalities
+
+    ↑( p,q : 0 ≤ p ≤ q ∧ (q ≤ n ∨ q = n+1) : credit.p.q )
+
+=   Range-split
+
+    ↑( p,q : 0 ≤ p ≤ q ≤ n : credit.p.q ) ↑
+    ↑( p,q : 0 ≤ p ≤ q ∧ q = n+1 : credit.p.q )
+
+=   Definition of m
+
+    m.n ↑
+    ↑( p,q : 0 ≤ p ≤ q ∧ q = n+1 : credit.p.q )
+
+=   One-point
+
+    m.n ↑
+    ↑( p : 0 ≤ p ≤ n+1 : credit.p.(n+1) )
+
+=   Definition of f
+
+    m.n ↑ f.(n+1)
+
+■

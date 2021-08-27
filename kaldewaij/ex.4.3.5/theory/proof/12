@@ -1,0 +1,21 @@
+•   f.(n+1)
+
+-   a.n < 0
+
+=   Theory [10]
+
+    (f.n + [a.n ≥ 0] - [a.n < 0]) ↑ 0
+
+=   Assumption
+
+    (f.n + [false] - [true]) ↑ 0
+
+=   Evaluate Iversonian
+
+    (f.n + 0 - 1) ↑ 0
+
+=   Arithmetic
+
+    (f.n - 1) ↑ 0
+
+■

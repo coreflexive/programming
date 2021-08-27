@@ -1,0 +1,19 @@
+•   bz.p.(q+1)
+
+=   Definition of bz
+
+    ( p,q :: #( i : p ≤ i < q : a.i < 0) ).p.(q+1)
+
+=   λ comp
+
+    #( i : p ≤ i < q+1 : a.i < 0)
+
+=   Split-off term
+
+    #( i : p ≤ i < n : a.i < 0) + [a.q < 0]
+
+=   Definition of bz
+
+    bz.p.q + [a.q < 0]
+
+■

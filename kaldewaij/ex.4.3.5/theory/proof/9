@@ -1,0 +1,31 @@
+•   f.0
+
+=   Definition of f
+
+    ( n :: ↑( p : 0 ≤ p ≤ n : credit.p.n ) ).0
+
+=   λ comp
+
+    ↑( p : 0 ≤ p ≤ 0 : credit.p.0 )
+
+=   Inequalities
+
+    ↑( p : 0 = p : credit.p.0 )
+
+=   One-point
+
+    credit.0.0
+
+=   Theory [1a]
+
+    pz.0.0 - bz.0.0
+
+=   Theory [2a,3a]
+
+    0 - 0
+
+=   Arithmetic
+
+    0
+
+■
