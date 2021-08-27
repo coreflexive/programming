@@ -1,0 +1,3 @@
+  con N : int { N ≥ 0 }
+; con a : array [0,N) of int
+; z : z = ↑( p,q : 0 ≤ p ≤ q ≤ N : credit.p.q )

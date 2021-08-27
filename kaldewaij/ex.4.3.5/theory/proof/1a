@@ -1,0 +1,11 @@
+•   credit.0.0
+
+=   Definition of credit
+
+    ( p,q :: pz.p.q - bz.p.q ).0.0
+
+=   λ comp
+
+    pz.0.0 - bz.0.0
+
+■

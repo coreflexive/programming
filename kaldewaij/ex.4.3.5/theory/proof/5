@@ -1,0 +1,11 @@
+•   credit.p.(q+1)
+
+=   Definition of credit
+
+    ( p,q :: pz.p.q - bz.p.q ).p.(n+1)
+
+=   λ comp
+
+    pz.p.(n+1) - bz.p.(n+1)
+
+■

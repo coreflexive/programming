@@ -1,0 +1,23 @@
+•   credit.p.(q+1)
+
+=   Theory [5]
+
+    pz.p.(n+1) - bz.p.(n+1)
+
+=   Theory [6,7]
+
+    (pz.p.q + [a.q ≥ 0]) - (bz.p.q + [a.q < 0])
+
+=   Arithmetic
+
+    pz.p.q + [a.q ≥ 0] - bz.p.q - [a.q < 0]
+
+=   Arithmetic
+
+    pz.p.q - bz.p.q + [a.q ≥ 0] - [a.q < 0]
+
+=   Definition of credit
+
+    credit.p.q + [a.q ≥ 0] - [a.q < 0]
+
+■

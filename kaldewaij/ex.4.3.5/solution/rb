@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+def max_credit(a = [], len = a.length)
+  n,z,y = 0,0,0
+  while n != len do
+    if a[n] >= 0
+      y = [y+1,0].max
+    elsif a[n] < 0
+      y = [y-1,0].max
+    end
+    z = [z,y].max
+    n = n+1
+  end
+  z
+end
+
+binding.pry

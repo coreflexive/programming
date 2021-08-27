@@ -1,0 +1,39 @@
+•   { inv.(n,z,y) ∧ a.n ≥ 0 } y:= E { y = f.(n+1) }
+
+(1) E = ? // E = (y + 1) ↑ 0
+
+≡   Hoare triple
+
+    inv.(n,z,y) ∧ a.n ≥ 0 ⇒ wp.(y:= E).(y = f.(n+1))
+
+≡   Prove ⇒
+
+    •   wp.(y:= E).(y = f.(n+1))
+
+    (2) 0 ≤ n ≤ #a
+    
+    (3) z = m.n
+    
+    (4) y = f.n
+
+    (5) n ≠ #a
+    
+    (6) a.n ≥ 0
+
+    ≡   Assignment
+    
+        E = f.(n+1)
+
+    ≡   Theory [11], using assumption (6)
+
+        E = (f.n + 1) ↑ 0
+
+    ≡   Assumption (4)
+
+        E = (y + 1) ↑ 0
+
+    ■
+
+⋯   true
+
+■
