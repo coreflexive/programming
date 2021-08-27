@@ -1,0 +1,11 @@
+§   KALD-EX-4-3-5
+
++   m = ( n :: ↑( p,q : 0 ≤ p ≤ q ≤ n : credit.p.q ) )
+
++   credit = ( p,q :: pz.p.q - bz.p.q )
+
++   pz = ( p,q :: #( i : p ≤ i < q : a.i ≥ 0) )
+
++   bz = ( p,q :: #( i : p ≤ i < q : a.i < 0) )
+
+■   KALD-EX-4-3-5
