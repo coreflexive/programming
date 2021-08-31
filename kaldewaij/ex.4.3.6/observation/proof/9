@@ -1,0 +1,24 @@
+•   h.(n+1)
+
+=   Definition of h
+
+    ( n :: ↓( p : 0 ≤ p ≤ n : f.p.n ) ).(n+1)
+
+=   λ comp
+
+    ↓( p : 0 ≤ p ≤ n+1 : f.p.(n+1) )
+
+=   Split-off term
+
+    ↓( p : 0 ≤ p ≤ n : f.p.(n+1) ) ↓ f.(n+1).(n+1)
+
+=   Theory [1], with p:= n+1
+
+    ↓( p : 0 ≤ p ≤ n : f.p.(n+1) ) ↓ 1
+
+=   Theory [5]
+
+    ↓( p : 0 ≤ p ≤ n : f.p.n * a.n ) ↓ 1
+
+■
+

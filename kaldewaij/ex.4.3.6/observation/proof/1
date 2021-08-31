@@ -1,0 +1,19 @@
+•   f.p.p
+
+=   Definition of f
+
+    ( p,q :: 𝚷( i : p ≤ i < q : a.i ) ).p.p
+
+=   λ comp
+
+    𝚷( i : p ≤ i < p : a.i )
+
+=   Contradiction
+
+    𝚷( i : false : a.i )
+
+=   Empty range
+
+    1
+
+■

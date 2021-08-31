@@ -1,0 +1,23 @@
+•   z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , z = m.(n+1) ∧ y = g.(n+1) ∧ x = h.(n+1)
+            ]
+
+=   Focus on postcondition
+
+    •   z = m.(n+1) ∧ y = g.(n+1)
+
+    ≡   Definition of m
+
+        z = m.n ↑ g.(n+1) ∧ y = g.(n+1)
+
+    ≡   Substitution
+
+        z = m.n ↑ y ∧ y = g.(n+1)
+
+    ■
+
+⋯   z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , z = m.n ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1)
+            ]
+
+■

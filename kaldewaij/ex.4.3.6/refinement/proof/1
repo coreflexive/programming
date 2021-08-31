@@ -1,0 +1,34 @@
+•   z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , z = m.n ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1)
+            ]
+
+⊑   Following assignment
+
+    •   (z = m.n ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1))[z:= z ↑ y]
+
+    (1) z = m.n
+    
+    (2) y = g.n
+    
+    (3) x = h.n
+
+    ≡   Textual substitution
+
+        z ↑ y = m.n ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1)
+
+    ≡   Assumption (1)
+
+        z ↑ y = z ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1)
+
+    ≡   = reflexive
+
+        y = g.(n+1) ∧ x = h.(n+1)
+
+    ■
+
+    z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , y = g.(n+1) ∧ x = h.(n+1)
+            ];
+    z:= z ↑ y
+
+■

@@ -1,0 +1,41 @@
+§   KALD-EX-4-3-6
+
+[0] z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , z = m.(n+1) ∧ y = g.(n+1) ∧ x = h.(n+1)
+            ]
+    ⊑
+    z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , z = m.n ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1)
+            ]
+
+[1] z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , z = m.n ↑ y ∧ y = g.(n+1) ∧ x = h.(n+1)
+            ]
+    ⊑
+    z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , y = g.(n+1) ∧ x = h.(n+1)
+            ];
+    z:= z ↑ y
+
+[2] z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , y = g.(n+1) ∧ x = h.(n+1)
+            ]
+    ⊑
+    if a.n ≥ 0 → z,y,x :  [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n ≥ 0
+                          , y = g.(n+1) ∧ x = h.(n+1) ]
+     ▯ a.n < 0 → z,y,x :  [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n < 0
+                          , y = g.(n+1) ∧ x = h.(n+1) ]
+    fi
+
+[3] z,y,x:  [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n ≥ 0
+            , y = g.(n+1) ∧ x = h.(n+1) ]
+    ⊑
+    y,x:= (y * a.n) ↑ 1, (x * a.n) ↑ 1
+
+[4] z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n < 0
+            , y = g.(n+1) ∧ x = h.(n+1) ]
+    ⊑
+    y,x:= (x * a.n) ↑ 1, (y * a.n) ↑ 1
+
+
+■   KALD-EX-4-3-6

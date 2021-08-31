@@ -1,0 +1,19 @@
+•   m.0
+
+=   Definition of m
+
+    ( n :: ↑( p,q : 0 ≤ p ≤ q ≤ n : f.p.q ) ).0
+
+=   λ comp
+
+    ↑( p,q : 0 ≤ p ≤ q ≤ 0 : f.p.q )
+
+=   Inequalities
+
+    ↑( p,q : 0 = p ∧ q = 0 : f.p.q )
+
+=   One-point
+
+    f.0.0
+
+■
