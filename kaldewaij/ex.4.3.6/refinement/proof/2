@@ -1,0 +1,13 @@
+•   z,y,x : [ z = m.n ∧ y = g.n ∧ x = h.n
+            , y = g.(n+1) ∧ x = h.(n+1)
+            ]
+
+⊑   Alternation.  Both g and h are defined by the cases.
+
+    if a.n ≥ 0 → y,x :  [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n ≥ 0
+                        , y = g.(n+1) ∧ x = h.(n+1) ]
+     ▯ a.n < 0 → y,x :  [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n < 0
+                        , y = g.(n+1) ∧ x = h.(n+1) ]
+    fi
+
+■

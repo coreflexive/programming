@@ -1,0 +1,9 @@
+  con N : int { N ≥ 0 }
+; con a : array [0,N) of int
+; var n,z,y,x:= 0,1,1,1
+; do n ≠ N →
+    if a.n ≥ 0 → y,x:= (y * a.n) ↑ 1, (x * a.n) ↑ 1
+     ▯ a.n < 0 → y,x:= (x * a.n) ↑ 1, (y * a.n) ↑ 1
+  ; z:= z ↑ y
+  ; n:= n+1
+  od

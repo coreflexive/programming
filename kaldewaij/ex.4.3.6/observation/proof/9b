@@ -1,0 +1,17 @@
+•   h.(n+1)
+
+-   a.n < 0
+
+=   Theory [9]
+
+    ↓( p : 0 ≤ p ≤ n : f.p.n * a.n ) ↓ 1
+
+=   Distributivity of * over ↓ using assumption
+
+    (↑( p : 0 ≤ p ≤ n : f.p.n ) * a.n) ↓ 1
+
+=   Definition of g
+
+    (g.n * a.n) ↓ 1
+
+■

@@ -1,0 +1,36 @@
+•   z,y,x:  [ z = m.n ∧ y = g.n ∧ x = h.n ∧ a.n ≥ 0
+            , y = g.(n+1) ∧ x = h.(n+1) ]
+    ⊑
+    y,x:= E,F
+
+(1) E = ? // E = (y * a.n) ↑ 1
+
+(2) F = ? // F = (x * a.n) ↑ 1
+
+⊩   Assignment
+
+    •   (y = g.(n+1) ∧ x = h.(n+1))[y,x:= E,F]
+
+    (3) z = m.n
+    
+    (4) y = g.n
+    
+    (5) x = h.n
+    
+    (6) a.n ≥ 0
+
+    ≡   Textual substitution
+
+        E = g.(n+1) ∧ F = h.(n+1)
+
+    ≡   Definitions of g and h, using assumption (6)
+
+        E = (g.n * a.n) ↑ 1 ∧ F = (h.n * a.n) ↑ 1
+
+    ≡   Assumptions (3,4)
+
+        E = (y * a.n) ↑ 1 ∧ F = (x * a.n) ↑ 1
+
+    ■
+
+■

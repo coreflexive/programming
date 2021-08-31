@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'pry'
+
+def maxsegprd(a = [], len = a.length)
+  n,z,y,x = 0,1,1,1
+  while n != len do
+    if a[n] >= 0
+      y,x = [y * a[n], 1].max,[x * a[n], 1].min
+    elsif a[n] < 0
+      y,x = [x * a[n], 1].max,[y * a[n], 1].min
+    end
+    z = [z,y].max
+    n = n+1
+  end
+  z
+end
+
+binding.pry

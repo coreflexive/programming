@@ -1,0 +1,19 @@
+•   f.p.(n+1)
+
+=   Definition of f
+
+    ( p,q :: 𝚷( i : p ≤ i < q : a.i ) ).p.(n+1)
+
+=   λ comp
+
+    𝚷( i : p ≤ i < n+1 : a.i )
+
+=   Split-off term
+
+    𝚷( i : p ≤ i < n : a.i ) * a.n
+
+=   Definition of f
+
+    f.p.n * a.n
+
+■
